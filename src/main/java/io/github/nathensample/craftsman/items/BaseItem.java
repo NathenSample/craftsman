@@ -1,13 +1,11 @@
 package io.github.nathensample.craftsman.items;
 
-import java.util.HashMap;
 import java.util.Map;
 
-public class BaseItem extends Item{
+public class BaseItem extends Item {
     private String name;
 
-    public BaseItem(String name)
-    {
+    public BaseItem(String name) {
         this.name = name;
     }
 
@@ -17,7 +15,7 @@ public class BaseItem extends Item{
     }
 
     @Override
-    public Map<Item, Integer> computeRequirements(){
+    public Map<Item, Integer> computeRequirements() {
         return Map.of(this, 1);
     }
 
@@ -28,8 +26,7 @@ public class BaseItem extends Item{
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof BaseItem comparison))
-        {
+        if (!(obj instanceof BaseItem comparison)) {
             return false;
         }
         return comparison.getName().equals(this.getName());

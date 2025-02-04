@@ -8,14 +8,14 @@ import org.mockito.runners.MockitoJUnitRunner;
 
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 @RunWith(MockitoJUnitRunner.class)
 
 public class CompositeItemTest {
     @Test
-    public void positiveEqualityTest()
-    {
+    public void positiveEqualityTest() {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer");
         CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
         CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
@@ -23,8 +23,7 @@ public class CompositeItemTest {
     }
 
     @Test
-    public void negativeDueToQuantityEqualityTest()
-    {
+    public void negativeDueToQuantityEqualityTest() {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer");
         CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
         CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 5));
@@ -32,8 +31,7 @@ public class CompositeItemTest {
     }
 
     @Test
-    public void negativeDueToDifferingNameEqualityTest()
-    {
+    public void negativeDueToDifferingNameEqualityTest() {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer");
         CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
         CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 5));
@@ -41,8 +39,7 @@ public class CompositeItemTest {
     }
 
     @Test
-    public void negativeDueToDifferingIngredientEqualityTest()
-    {
+    public void negativeDueToDifferingIngredientEqualityTest() {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer");
         BaseItem testBaseItem = new BaseItem("Test");
 
@@ -52,8 +49,7 @@ public class CompositeItemTest {
     }
 
     @Test
-    public void negativeEqualityTestWithRandomObj()
-    {
+    public void negativeEqualityTestWithRandomObj() {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer");
         CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
         String bobGeldofStr = "Bob Geldof";

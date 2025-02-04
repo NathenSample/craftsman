@@ -8,8 +8,7 @@ public class CompositeItem extends Item {
     private Map<Item, Integer> requirements;
     private String name;
 
-    public CompositeItem(String name, Map<Item, Integer> requirements)
-    {
+    public CompositeItem(String name, Map<Item, Integer> requirements) {
         this.name = name;
         this.requirements = requirements;
     }
@@ -20,11 +19,9 @@ public class CompositeItem extends Item {
     }
 
     @Override
-    public Map<Item, Integer> computeRequirements()
-    {
+    public Map<Item, Integer> computeRequirements() {
         Map<Item, Integer> returnList = new LinkedHashMap<>();
-        for (Map.Entry<Item, Integer> entry : this.getItemRequirements().entrySet())
-        {
+        for (Map.Entry<Item, Integer> entry : this.getItemRequirements().entrySet()) {
             Item requiredItem = entry.getKey();
 
             // If it's a base item, lets add it to the returnlist
@@ -37,9 +34,7 @@ public class CompositeItem extends Item {
                     // Just insert the item as required
                     returnList.put(requiredItem, entry.getValue());
                 }
-            }
-            else if (requiredItem instanceof CompositeItem)
-            {
+            } else if (requiredItem instanceof CompositeItem) {
                 Map<Item, Integer> requiredForComposite = requiredItem.computeRequirements();
                 for (Map.Entry<Item, Integer> subEntry : requiredForComposite.entrySet()) {
                     if (returnList.containsKey(subEntry.getKey())) {
@@ -66,16 +61,13 @@ public class CompositeItem extends Item {
 
     @Override
     public boolean equals(Object obj) {
-        if (!(obj instanceof CompositeItem comparison))
-        {
+        if (!(obj instanceof CompositeItem comparison)) {
             return false;
         }
-        if (!comparison.getName().equals(this.getName()))
-        {
+        if (!comparison.getName().equals(this.getName())) {
             return false;
         }
-        if (!comparison.getItemRequirements().equals(this.getItemRequirements()))
-        {
+        if (!comparison.getItemRequirements().equals(this.getItemRequirements())) {
             return false;
         }
 
