@@ -12,7 +12,7 @@ public class ItemStore {
     private Map<String, Item> itemMap = new HashMap<>();
 
     @PostConstruct
-    public void test() {
+    public void init() {
         BaseItem clothManaWisp = new BaseItem(("Cloth Mana Wisp"));
         itemMap.put("cloth mana wisp", clothManaWisp);
 

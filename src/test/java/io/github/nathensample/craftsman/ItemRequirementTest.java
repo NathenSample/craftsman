@@ -23,7 +23,7 @@ public class ItemRequirementTest {
 
     @Test
     public void testComputeRequirements() {
-        itemStore.test();
+        itemStore.init();
         Optional<Item> myItemOpt = itemStore.getItem("sealed epherium sash");
         assertTrue(myItemOpt.isPresent());
         Item myItem = myItemOpt.get();
