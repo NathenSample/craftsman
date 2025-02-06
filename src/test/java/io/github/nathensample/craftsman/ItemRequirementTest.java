@@ -50,4 +50,19 @@ public class ItemRequirementTest {
         assertEquals(1, requirements.size());
         assertEquals(Integer.valueOf(6), requirements.get(testOre));
     }
+
+    @Test
+    public void testRecipeWhichProducesMultipleAndHasFlat()
+    {
+        //Create a test Ingot which requires 3 ore, to make 2 ingots
+        BaseItem testOre = new BaseItem("Test Ore");
+        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
+
+        //Create  a test composite which should require 2.5 crafts of test Ingot
+        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 5));
+
+        Map<Item, Integer> requirements = testComposite.computeRequirements();
+        assertEquals(1, requirements.size());
+        assertEquals(Integer.valueOf(9), requirements.get(testOre));
+    }
 }

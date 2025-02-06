@@ -20,7 +20,7 @@ public class BaseItemTest {
     {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer"); //Charcoal Stabilizer
         BaseItem bobGeldof = new BaseItem("Bob Geldof"); //Bob Geldof
-        assertEquals(charcoalStabilizer, bobGeldof);
+        assertNotEquals(charcoalStabilizer, bobGeldof);
     }
 
     @Test

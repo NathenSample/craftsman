@@ -27,31 +27,42 @@ public class CompositeItem extends Item {
         return name;
     }
 
+    //TODO: I hate this method
     @Override
     public Map<Item, Integer> computeRequirements() {
         Map<Item, Integer> returnList = new LinkedHashMap<>();
         for (Map.Entry<Item, Integer> entry : this.getItemRequirements().entrySet()) {
             Item requiredItem = entry.getKey();
-
+            int requiredQuantity = entry.getValue();
             // If it's a base item, lets add it to the returnlist
-            if (requiredItem instanceof BaseItem) {
+            if (requiredItem instanceof BaseItem)
+            {
                 //If the requirements already contain this item
-                if (returnList.containsKey(requiredItem)) {
+                if (returnList.containsKey(requiredItem))
+                {
                     // Increase the count of how many is required
                     returnList.put(requiredItem, this.getItemRequirements().get(requiredItem) + entry.getValue());
-                } else {
+                }
+                else
+                {
                     // Just insert the item as required
                     returnList.put(requiredItem, entry.getValue());
                 }
-            } else if (requiredItem instanceof CompositeItem) {
+            }
+            else if (requiredItem instanceof CompositeItem)
+            {
                 Map<Item, Integer> requiredForComposite = requiredItem.computeRequirements();
-                for (Map.Entry<Item, Integer> subEntry : requiredForComposite.entrySet()) {
-                    if (returnList.containsKey(subEntry.getKey())) {
-                        // Increase the count of how many is required
-                        returnList.put(subEntry.getKey(), this.getItemRequirements().get(subEntry.getKey()) + (subEntry.getValue() * entry.getValue()) / entry.getKey().getCraftProduces());
-                    } else {
-                        // Just insert the item as required
-                        returnList.put(subEntry.getKey(), (subEntry.getValue() * entry.getValue()) / entry.getKey().getCraftProduces());
+                for (Map.Entry<Item, Integer> ingredientToQuantity : requiredForComposite.entrySet()) {
+                    Item itemToAddToReturnedRequirements = ingredientToQuantity.getKey();
+                    Integer quantityOfItemRequired = ingredientToQuantity.getValue();
+                    int craftsRequired = (int) Math.ceil((double) requiredQuantity / requiredItem.getCraftProduces());
+                    if (returnList.containsKey(ingredientToQuantity.getKey()))
+                    {
+                        returnList.put(itemToAddToReturnedRequirements, this.getItemRequirements().get(ingredientToQuantity.getKey()) + craftsRequired * quantityOfItemRequired);
+                    }
+                    else
+                    {
+                        returnList.put(itemToAddToReturnedRequirements, craftsRequired * quantityOfItemRequired);
                     }
                 }
             }
