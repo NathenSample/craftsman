@@ -5,12 +5,21 @@ import java.util.Map;
 
 public class CompositeItem extends Item {
 
+    private final int craftProduces;
     private Map<Item, Integer> requirements;
     private String name;
 
     public CompositeItem(String name, Map<Item, Integer> requirements) {
         this.name = name;
         this.requirements = requirements;
+        this.craftProduces = 1;
+    }
+
+
+    public CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces) {
+        this.name = name;
+        this.requirements = requirements;
+        this.craftProduces = craftProduces;
     }
 
     @Override
@@ -39,10 +48,10 @@ public class CompositeItem extends Item {
                 for (Map.Entry<Item, Integer> subEntry : requiredForComposite.entrySet()) {
                     if (returnList.containsKey(subEntry.getKey())) {
                         // Increase the count of how many is required
-                        returnList.put(subEntry.getKey(), this.getItemRequirements().get(subEntry.getKey()) + (subEntry.getValue() * entry.getValue()));
+                        returnList.put(subEntry.getKey(), this.getItemRequirements().get(subEntry.getKey()) + (subEntry.getValue() * entry.getValue()) / entry.getKey().getCraftProduces());
                     } else {
                         // Just insert the item as required
-                        returnList.put(subEntry.getKey(), subEntry.getValue() * entry.getValue());
+                        returnList.put(subEntry.getKey(), (subEntry.getValue() * entry.getValue()) / entry.getKey().getCraftProduces());
                     }
                 }
             }
@@ -52,11 +61,15 @@ public class CompositeItem extends Item {
 
     @Override
     public String toString() {
-        return name + "(Composite Item) - Requirements: " + requirements;
+        return name + "(Composite Item) - Produces: " + craftProduces + " Requirements: " + requirements;
     }
 
     public Map<Item, Integer> getItemRequirements() {
         return requirements;
+    }
+
+    public int getCraftProduces() {
+        return craftProduces;
     }
 
     @Override

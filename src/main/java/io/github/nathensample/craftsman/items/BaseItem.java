@@ -20,6 +20,11 @@ public class BaseItem extends Item {
     }
 
     @Override
+    public int getCraftProduces() {
+        return 1;
+    }
+
+    @Override
     public String toString() {
         return name + "(BaseItem)";
     }

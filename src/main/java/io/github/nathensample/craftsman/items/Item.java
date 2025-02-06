@@ -7,4 +7,6 @@ public abstract class Item {
 
     public abstract Map<Item, Integer> computeRequirements();
 
+    public abstract int getCraftProduces();
+
 }

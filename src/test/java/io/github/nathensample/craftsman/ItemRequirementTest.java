@@ -1,5 +1,7 @@
 package io.github.nathensample.craftsman;
 
+import io.github.nathensample.craftsman.items.BaseItem;
+import io.github.nathensample.craftsman.items.CompositeItem;
 import io.github.nathensample.craftsman.items.Item;
 import io.github.nathensample.craftsman.items.ItemStore;
 import org.junit.Test;
@@ -28,8 +30,24 @@ public class ItemRequirementTest {
         assertTrue(myItemOpt.isPresent());
         Item myItem = myItemOpt.get();
         Map<Item, Integer> requirements = myItem.computeRequirements();
+        logger.info(myItem.getName() + " " + requirements.toString());
         assertEquals(5, requirements.size());
         //assertTrue(requirements.containsKey());
         //TODO: Key:value checks
+    }
+
+    @Test
+    public void testRecipeWhichProducesMultiple()
+    {
+        //Create a test Ingot which requires 3 ore, to make 2 ingots
+        BaseItem testOre = new BaseItem("Test Ore");
+        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
+
+        //Create  a test composite which should require 2 crafts of test Ingot
+        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 4));
+
+        Map<Item, Integer> requirements = testComposite.computeRequirements();
+        assertEquals(1, requirements.size());
+        assertEquals(Integer.valueOf(6), requirements.get(testOre));
     }
 }
