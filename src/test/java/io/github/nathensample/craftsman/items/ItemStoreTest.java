@@ -66,6 +66,10 @@ public class ItemStoreTest {
     @Test
     public void mechanicalSpringHasValidRequirements()
     {
-
+//        Optional<Item> myItemOpt = itemStore.getItem("rampage test");
+//        assertTrue(myItemOpt.isPresent());
+//        Item myItem = myItemOpt.get();
+//        Map<Item, Integer> requirements = myItem.computeRequirements();
+//        assertEquals(7, requirements.size());
     }
 }

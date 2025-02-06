@@ -58,6 +58,11 @@ public class ItemStore {
         CompositeItem mechanicalSpring = new CompositeItem("Mechanical Spring", Map.of(ironIngot, 20, copperIngot, 5, archeumIngot, 3, roughPolish, 1), this);
 
 
+
+
+        CompositeItem rampage = new CompositeItem("rampage test", Map.of(mechanicalSpring, 1, alloyCombiner, 1), this);
+
+
         //CompositeItem x = new CompositeItem("", Map.of(), this);
     }
 

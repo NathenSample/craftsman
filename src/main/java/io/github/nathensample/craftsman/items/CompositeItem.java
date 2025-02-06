@@ -60,7 +60,7 @@ public class CompositeItem extends Item {
                     int craftsRequired = (int) Math.ceil((double) requiredQuantity / requiredItem.getCraftProduces());
                     if (returnList.containsKey(ingredientToQuantity.getKey()))
                     {
-                        returnList.put(itemToAddToReturnedRequirements, this.getItemRequirements().get(ingredientToQuantity.getKey()) + craftsRequired * quantityOfItemRequired);
+                        returnList.put(itemToAddToReturnedRequirements, returnList.get(ingredientToQuantity.getKey()) + craftsRequired * quantityOfItemRequired);
                     }
                     else
                     {
