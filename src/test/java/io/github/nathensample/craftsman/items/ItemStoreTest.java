@@ -31,7 +31,6 @@ public class ItemStoreTest {
         Optional<Item> myItemOpt = itemStore.getItem("azalea");
         assertTrue(myItemOpt.isPresent());
     }
-    //TODO: Currently expected to fail since composites have not been converted to new registration method
     @Test
     public void strongWheelHasValidRequirements()
     {
