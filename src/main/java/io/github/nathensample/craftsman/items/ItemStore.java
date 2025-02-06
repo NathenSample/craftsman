@@ -32,6 +32,11 @@ public class ItemStore {
         BaseItem silverOre = new BaseItem("Silver Ore", this);
         BaseItem copperOre = new BaseItem("Copper Ore", this);
         BaseItem azalea = new BaseItem("Azalea", this);
+        BaseItem goldOre = new BaseItem("Gold Ore", this);
+        BaseItem archeumOre = new BaseItem("Archeum Ore", this);
+        BaseItem lotus = new BaseItem("Lotus", this);
+        BaseItem oats = new BaseItem("Oats", this);
+        BaseItem antlerCoral = new BaseItem("Antler Coral", this);
 
         //BaseItem x = new BaseItem("y");
 
@@ -44,7 +49,14 @@ public class ItemStore {
         CompositeItem copperIngot = new CompositeItem("Copper Ingot", Map.of(copperOre, 3), this);
         CompositeItem silverIngot = new CompositeItem("Silver Ingot", Map.of(silverOre, 3), this);
         CompositeItem sturdyIngot = new CompositeItem("Sturdy Ingot", Map.of(ironIngot, 8, copperIngot, 1, silverIngot, 1, opaquePolish, 1), this);
-        CompositeItem strongWheel = new CompositeItem("Strong Wheel", Map.of(archeumLog, 4, sturdyIngot, 1), this);
+        CompositeItem strongWheel = new CompositeItem("Strong Wheel", Map.of(archeumLog, 4, sturdyIngot, 1), 2, this);
+        CompositeItem tyre = new CompositeItem("Tyre", Map.of(strongWheel, 1, rubber, 20), this);
+        CompositeItem goldIngot = new CompositeItem("Gold Ingot", Map.of(goldOre, 3), this);
+        CompositeItem alloyCombiner = new CompositeItem("Alloy Combiner", Map.of(ironIngot, 5, goldIngot, 1), this);
+        CompositeItem archeumIngot = new CompositeItem("Archeum Ingot", Map.of(archeumOre, 3), this);
+        CompositeItem roughPolish =  new CompositeItem("Rough Polish", Map.of(charcoalStabilizer, 5, lotus, 30, oats, 30, antlerCoral, 20), this);
+        CompositeItem mechanicalSpring = new CompositeItem("Mechanical Spring", Map.of(ironIngot, 20, copperIngot, 5, archeumIngot, 3, roughPolish, 1), this);
+
 
         //CompositeItem x = new CompositeItem("", Map.of(), this);
     }

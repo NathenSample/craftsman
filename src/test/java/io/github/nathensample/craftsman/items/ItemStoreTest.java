@@ -62,4 +62,10 @@ public class ItemStoreTest {
         assertTrue(requirements.containsKey(new BaseItem("iron ore")));
         assertEquals(24, requirements.get(new BaseItem("iron ore")));
     }
+
+    @Test
+    public void mechanicalSpringHasValidRequirements()
+    {
+
+    }
 }
