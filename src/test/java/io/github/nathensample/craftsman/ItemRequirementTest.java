@@ -52,7 +52,7 @@ public class ItemRequirementTest {
     }
 
     @Test
-    public void testRecipeWhichProducesMultipleAndHasFlat()
+    public void testRecipeWhichProducesMultipleAndHasFloatCraftRequirements()
     {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
         BaseItem testOre = new BaseItem("Test Ore");
