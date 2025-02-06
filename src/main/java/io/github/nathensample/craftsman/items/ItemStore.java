@@ -13,33 +13,34 @@ public class ItemStore {
 
     @PostConstruct
     public void init() {
-        BaseItem clothManaWisp = new BaseItem(("Cloth Mana Wisp"));
-        BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer");              //Charcoal Stabilizer
-        BaseItem fabric = new BaseItem("Fabric");                                       //Fabric
-        BaseItem narcissus = new BaseItem("Narcissus");                                 //Narcissus
-        BaseItem clover = new BaseItem("Clover");                                       //Clover
-        BaseItem rose = new BaseItem("Rose");                                           //Rose
-        BaseItem moonlightArcheumEssence = new BaseItem(("Moonlight Archeum Essence"));       //Moonlight Archeum Essence
-        //Latest batch
-        BaseItem vehicleUpgradeDevice = new BaseItem("Vehicle Upgrade Device");
-        BaseItem rampageS200Design = new BaseItem("Rampage S200 Design");
-        BaseItem rubber = new BaseItem("Rubber");
-        BaseItem archeumLog = new BaseItem("Archeum Log");
-        BaseItem ironOre = new BaseItem("Iron Ore");
-        BaseItem silverOre = new BaseItem("Silver Ore");
-        BaseItem copperOre = new BaseItem("Copper Ore");
-        BaseItem azalea = new BaseItem("Azalea");
+        BaseItem clothManaWisp = new BaseItem(("Cloth Mana Wisp"), this);
+        BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer", this);              //Charcoal Stabilizer
+        BaseItem fabric = new BaseItem("Fabric", this);                                       //Fabric
+        BaseItem narcissus = new BaseItem("Narcissus", this);                                 //Narcissus
+        BaseItem clover = new BaseItem("Clover", this);                                       //Clover
+        BaseItem rose = new BaseItem("Rose", this);                                           //Rose
+        BaseItem moonlightArcheumEssence = new BaseItem("Moonlight Archeum Essence", this);       //Moonlight Archeum Essence
+        BaseItem vehicleUpgradeDevice = new BaseItem("Vehicle Upgrade Device", this);
+        BaseItem rampageS200Design = new BaseItem("Rampage S200 Design", this);
+        BaseItem rubber = new BaseItem("Rubber", this);
+        BaseItem archeumLog = new BaseItem("Archeum Log", this);
+        BaseItem ironOre = new BaseItem("Iron Ore", this);
+        BaseItem silverOre = new BaseItem("Silver Ore", this);
+        BaseItem copperOre = new BaseItem("Copper Ore", this);
+        BaseItem azalea = new BaseItem("Azalea", this);
 
         //BaseItem x = new BaseItem("y");
 
 
-        itemMap.put("cloth mana wisp", clothManaWisp);
-        itemMap.put("charcoal stabilizer", charcoalStabilizer);
-        itemMap.put("fabric", fabric);
-        itemMap.put("narcissus", narcissus);
-        itemMap.put("clover", clover);
-        itemMap.put("rose", rose);
-        itemMap.put("moonlight archeum essence", moonlightArcheumEssence);
+//        itemMap.put("cloth mana wisp", clothManaWisp);
+//        itemMap.put("charcoal stabilizer", charcoalStabilizer);
+//        itemMap.put("fabric", fabric);
+//        itemMap.put("narcissus", narcissus);
+//        itemMap.put("clover", clover);
+//        itemMap.put("rose", rose);
+//        itemMap.put("moonlight archeum essence", moonlightArcheumEssence);
+
+        //itemMap.put("", obj)
 
         CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3, clover, 20, rose, 20));
         CompositeItem beautifullyColoredFabric = new CompositeItem("Beautifully Colored Fabric", Map.of(fabric, 10, smallRootPigment, 1));
@@ -62,6 +63,11 @@ public class ItemStore {
     }
 
     public Optional<Item> getItem(String name) {
-        return Optional.ofNullable(itemMap.get(name));
+        return Optional.ofNullable(itemMap.get(name.toLowerCase()));
+    }
+
+    public void addToItemMap(String itemName, Item item)
+    {
+        itemMap.put(itemName.toLowerCase(), item);
     }
 }

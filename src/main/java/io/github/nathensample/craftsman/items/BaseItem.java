@@ -5,8 +5,9 @@ import java.util.Map;
 public class BaseItem extends Item {
     private String name;
 
-    public BaseItem(String name) {
+    public BaseItem(String name, ItemStore itemStore) {
         this.name = name;
+        itemStore.addToItemMap(name, this);
     }
 
     @Override

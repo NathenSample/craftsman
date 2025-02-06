@@ -4,24 +4,26 @@ import io.github.nathensample.craftsman.items.BaseItem;
 import io.github.nathensample.craftsman.items.CompositeItem;
 import io.github.nathensample.craftsman.items.Item;
 import io.github.nathensample.craftsman.items.ItemStore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class ItemRequirementTest {
     private static final Logger logger = LoggerFactory.getLogger(ItemRequirementTest.class);
     private final ItemStore itemStore = new ItemStore();
 
+    @Mock
+    private ItemStore mockItemStore;
     @Test
     public void testComputeRequirements() {
         //TODO: Replace with test which doesn't use the itemstore
@@ -40,7 +42,7 @@ public class ItemRequirementTest {
     public void testRecipeWhichProducesMultiple()
     {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
-        BaseItem testOre = new BaseItem("Test Ore");
+        BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
         CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
 
         //Create  a test composite which should require 2 crafts of test Ingot
@@ -55,7 +57,7 @@ public class ItemRequirementTest {
     public void testRecipeWhichProducesMultipleAndHasFloatCraftRequirements()
     {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
-        BaseItem testOre = new BaseItem("Test Ore");
+        BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
         CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
 
         //Create  a test composite which should require 2.5 crafts of test Ingot
