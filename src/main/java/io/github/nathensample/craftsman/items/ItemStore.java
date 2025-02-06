@@ -31,35 +31,18 @@ public class ItemStore {
 
         //BaseItem x = new BaseItem("y");
 
+        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3, clover, 20, rose, 20), this);
+        CompositeItem beautifullyColoredFabric = new CompositeItem("Beautifully Colored Fabric", Map.of(fabric, 10, smallRootPigment, 1), this);
+        CompositeItem magnificentOceanSash = new CompositeItem("Magnificent Ocean Sash", Map.of(clothManaWisp, 9), this);
+        CompositeItem sealedEpheriumSash = new CompositeItem("Sealed Epherium Sash", Map.of(moonlightArcheumEssence, 3, beautifullyColoredFabric, 2), this);
+        CompositeItem opaquePolish = new CompositeItem("Opaque Polish", Map.of(charcoalStabilizer, 3, azalea, 20, narcissus, 20), this);
+        CompositeItem ironIngot = new CompositeItem("Iron Ingot", Map.of(ironOre, 3), this);
+        CompositeItem copperIngot = new CompositeItem("Copper Ingot", Map.of(copperOre, 3), this);
+        CompositeItem silverIngot = new CompositeItem("Silver Ingot", Map.of(silverOre, 3), this);
+        CompositeItem sturdyIngot = new CompositeItem("Sturdy Ingot", Map.of(ironIngot, 8, copperIngot, 1, silverIngot, 1, opaquePolish, 1), this);
+        CompositeItem strongWheel = new CompositeItem("Strong Wheel", Map.of(archeumLog, 4, sturdyIngot, 1), this);
 
-//        itemMap.put("cloth mana wisp", clothManaWisp);
-//        itemMap.put("charcoal stabilizer", charcoalStabilizer);
-//        itemMap.put("fabric", fabric);
-//        itemMap.put("narcissus", narcissus);
-//        itemMap.put("clover", clover);
-//        itemMap.put("rose", rose);
-//        itemMap.put("moonlight archeum essence", moonlightArcheumEssence);
-
-        //itemMap.put("", obj)
-
-        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3, clover, 20, rose, 20));
-        CompositeItem beautifullyColoredFabric = new CompositeItem("Beautifully Colored Fabric", Map.of(fabric, 10, smallRootPigment, 1));
-        CompositeItem magnificentOceanSash = new CompositeItem("Magnificent Ocean Sash", Map.of(clothManaWisp, 9));
-        CompositeItem sealedEpheriumSash = new CompositeItem("Sealed Epherium Sash", Map.of(moonlightArcheumEssence, 3, beautifullyColoredFabric, 2));
-        //Latest batch
-        CompositeItem opaquePolish = new CompositeItem("Opaque Polish", Map.of(charcoalStabilizer, 3, azalea, 20, narcissus, 20));
-        CompositeItem ironIngot = new CompositeItem("Iron Ingot", Map.of(ironOre, 3));
-        CompositeItem copperIngot = new CompositeItem("Copper Ingot", Map.of(copperOre, 3));
-        CompositeItem silverIngot = new CompositeItem("Silver Ingot", Map.of(silverOre, 3));
-        CompositeItem sturdyIngot = new CompositeItem("Sturdy Ingot", Map.of(ironIngot, 8, copperIngot, 1, silverIngot, 1, opaquePolish, 1));
-        CompositeItem strongWheel = new CompositeItem("Strong Wheel", Map.of(archeumLog, 4, sturdyIngot, 1));
-
-//        CompositeItem x = new CompositeItem("y", Map.of());
-
-        itemMap.put("small root pigment", smallRootPigment);
-        itemMap.put("beautifully colored fabric", beautifullyColoredFabric);
-        itemMap.put("magnificent ocean sash", magnificentOceanSash);
-        itemMap.put("sealed epherium sash", sealedEpheriumSash);
+        //CompositeItem x = new CompositeItem("", Map.of(), this);
     }
 
     public Optional<Item> getItem(String name) {

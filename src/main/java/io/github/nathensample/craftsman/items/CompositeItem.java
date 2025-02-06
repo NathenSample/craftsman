@@ -9,17 +9,19 @@ public class CompositeItem extends Item {
     private Map<Item, Integer> requirements;
     private String name;
 
-    public CompositeItem(String name, Map<Item, Integer> requirements) {
+    public CompositeItem(String name, Map<Item, Integer> requirements, ItemStore itemStore) {
         this.name = name;
         this.requirements = requirements;
         this.craftProduces = 1;
+        itemStore.addToItemMap(name, this);
     }
 
 
-    public CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces) {
+    public CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces, ItemStore itemStore) {
         this.name = name;
         this.requirements = requirements;
         this.craftProduces = craftProduces;
+        itemStore.addToItemMap(name, this);
     }
 
     @Override

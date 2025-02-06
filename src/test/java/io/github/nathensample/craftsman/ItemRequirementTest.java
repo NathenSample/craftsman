@@ -43,10 +43,10 @@ public class ItemRequirementTest {
     {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
         BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
-        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
+        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2, mockItemStore);
 
         //Create  a test composite which should require 2 crafts of test Ingot
-        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 4));
+        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 4), mockItemStore);
 
         Map<Item, Integer> requirements = testComposite.computeRequirements();
         assertEquals(1, requirements.size());
@@ -58,10 +58,10 @@ public class ItemRequirementTest {
     {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
         BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
-        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
+        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2, mockItemStore);
 
         //Create  a test composite which should require 2.5 crafts of test Ingot
-        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 5));
+        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 5), mockItemStore);
 
         Map<Item, Integer> requirements = testComposite.computeRequirements();
         assertEquals(1, requirements.size());

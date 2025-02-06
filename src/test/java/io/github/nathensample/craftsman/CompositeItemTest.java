@@ -21,24 +21,24 @@ public class CompositeItemTest {
     @Test
     public void positiveEqualityTest() {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer", mockItemStore);
-        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
-        CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
+        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3), mockItemStore);
+        CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3), mockItemStore);
         assertEquals(smallRootPigment, otherSmallRootPigment);
     }
 
     @Test
     public void negativeDueToQuantityEqualityTest() {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer", mockItemStore);
-        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
-        CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 5));
+        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3), mockItemStore);
+        CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 5), mockItemStore);
         assertNotEquals(smallRootPigment, otherSmallRootPigment);
     }
 
     @Test
     public void negativeDueToDifferingNameEqualityTest() {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer", mockItemStore);
-        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
-        CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 5));
+        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3), mockItemStore);
+        CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 5), mockItemStore);
         assertNotEquals(smallRootPigment, otherSmallRootPigment);
     }
 
@@ -47,15 +47,15 @@ public class CompositeItemTest {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer", mockItemStore);
         BaseItem testBaseItem = new BaseItem("Test", mockItemStore);
 
-        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
-        CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(testBaseItem, 3));
+        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3), mockItemStore);
+        CompositeItem otherSmallRootPigment = new CompositeItem("Small Root Pigment", Map.of(testBaseItem, 3), mockItemStore);
         assertNotEquals(smallRootPigment, otherSmallRootPigment);
     }
 
     @Test
     public void negativeEqualityTestWithRandomObj() {
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer", mockItemStore);
-        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3));
+        CompositeItem smallRootPigment = new CompositeItem("Small Root Pigment", Map.of(charcoalStabilizer, 3), mockItemStore);
         String bobGeldofStr = "Bob Geldof";
         assertNotEquals(smallRootPigment, bobGeldofStr);
     }
