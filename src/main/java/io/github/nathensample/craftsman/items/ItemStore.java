@@ -51,7 +51,7 @@ public class ItemStore {
         CompositeItem copperIngot = new CompositeItem("Copper Ingot", Map.of(copperOre, 3));
         CompositeItem silverIngot = new CompositeItem("Silver Ingot", Map.of(silverOre, 3));
         CompositeItem sturdyIngot = new CompositeItem("Sturdy Ingot", Map.of(ironIngot, 8, copperIngot, 1, silverIngot, 1, opaquePolish, 1));
-
+        CompositeItem strongWheel = new CompositeItem("Strong Wheel", Map.of(archeumLog, 4, sturdyIngot, 1));
 
 //        CompositeItem x = new CompositeItem("y", Map.of());
 

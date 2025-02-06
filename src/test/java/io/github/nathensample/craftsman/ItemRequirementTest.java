@@ -20,11 +20,11 @@ import static org.junit.Assert.assertTrue;
 @RunWith(MockitoJUnitRunner.class)
 public class ItemRequirementTest {
     private static final Logger logger = LoggerFactory.getLogger(ItemRequirementTest.class);
-    @InjectMocks
-    private ItemStore itemStore;
+    private final ItemStore itemStore = new ItemStore();
 
     @Test
     public void testComputeRequirements() {
+        //TODO: Replace with test which doesn't use the itemstore
         itemStore.init();
         Optional<Item> myItemOpt = itemStore.getItem("sealed epherium sash");
         assertTrue(myItemOpt.isPresent());
