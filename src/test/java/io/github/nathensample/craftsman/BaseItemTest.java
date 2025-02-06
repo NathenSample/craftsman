@@ -39,4 +39,16 @@ public class BaseItemTest {
         assertNotEquals(charcoalStabilizer, bobGeldofStr);
     }
 
+    @Test
+    public void testHashCode()
+    {
+        assertEquals(new BaseItem("test"), new BaseItem("test"));
+    }
+
+    @Test
+    public void testHashCodeWithVariedCasing()
+    {
+        assertEquals(new BaseItem("test"), new BaseItem("TeSt"));
+    }
+
 }

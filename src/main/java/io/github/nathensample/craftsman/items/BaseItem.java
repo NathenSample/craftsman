@@ -1,9 +1,16 @@
 package io.github.nathensample.craftsman.items;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class BaseItem extends Item {
     private String name;
+
+    // Used for simplified BaseItem's in testing
+    public BaseItem(String name)
+    {
+        this.name = name;
+    }
 
     public BaseItem(String name, ItemStore itemStore) {
         this.name = name;
@@ -12,7 +19,7 @@ public class BaseItem extends Item {
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
@@ -27,7 +34,7 @@ public class BaseItem extends Item {
 
     @Override
     public String toString() {
-        return name + "(BaseItem)";
+        return getName() + "(BaseItem)";
     }
 
     @Override
@@ -35,6 +42,12 @@ public class BaseItem extends Item {
         if (!(obj instanceof BaseItem comparison)) {
             return false;
         }
-        return comparison.getName().equals(this.getName());
+        return comparison.getName().equalsIgnoreCase(this.getName());
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(getName().toLowerCase());
     }
 }

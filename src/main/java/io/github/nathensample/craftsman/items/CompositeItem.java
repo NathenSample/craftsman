@@ -93,10 +93,6 @@ public class CompositeItem extends Item {
         if (!comparison.getName().equals(this.getName())) {
             return false;
         }
-        if (!comparison.getItemRequirements().equals(this.getItemRequirements())) {
-            return false;
-        }
-
-        return true;
+        return comparison.getItemRequirements().equals(this.getItemRequirements());
     }
 }

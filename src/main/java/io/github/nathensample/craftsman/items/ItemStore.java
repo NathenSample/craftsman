@@ -9,6 +9,10 @@ import java.util.Optional;
 
 @Service
 public class ItemStore {
+    Map<String, Item> getItemMap() {
+        return itemMap;
+    }
+
     private Map<String, Item> itemMap = new HashMap<>();
 
     @PostConstruct
