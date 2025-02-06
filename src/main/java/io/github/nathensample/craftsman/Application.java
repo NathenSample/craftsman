@@ -8,7 +8,6 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync(proxyTargetClass = true)
 public class Application
 {
-    //TODO: Properly class/method link the javadoc
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
