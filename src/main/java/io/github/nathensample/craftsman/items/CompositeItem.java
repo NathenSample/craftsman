@@ -33,9 +33,9 @@ public class CompositeItem extends Item {
     @Override
     public Map<Item, Integer> computeRequirements() {
         Map<Item, Integer> returnList = new LinkedHashMap<>();
-        for (Map.Entry<Item, Integer> entry : this.getItemRequirements().entrySet()) {
-            Item requiredItem = entry.getKey();
-            int requiredQuantity = entry.getValue();
+        for (Map.Entry<Item, Integer> craftingRequirement : this.getItemRequirements().entrySet()) {
+            Item requiredItem = craftingRequirement.getKey();
+            int requiredQuantity = craftingRequirement.getValue();
             // If it's a base item, lets add it to the returnlist
             if (requiredItem instanceof BaseItem)
             {
@@ -43,12 +43,12 @@ public class CompositeItem extends Item {
                 if (returnList.containsKey(requiredItem))
                 {
                     // Increase the count of how many is required
-                    returnList.put(requiredItem, this.getItemRequirements().get(requiredItem) + entry.getValue());
+                    returnList.put(requiredItem, this.getItemRequirements().get(requiredItem) + craftingRequirement.getValue());
                 }
                 else
                 {
                     // Just insert the item as required
-                    returnList.put(requiredItem, entry.getValue());
+                    returnList.put(requiredItem, craftingRequirement.getValue());
                 }
             }
             else if (requiredItem instanceof CompositeItem)
