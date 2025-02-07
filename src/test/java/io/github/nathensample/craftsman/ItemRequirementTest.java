@@ -10,6 +10,8 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Map;
 import java.util.Optional;
@@ -18,8 +20,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class ItemRequirementTest {
-    private static final Logger logger = LoggerFactory.getLogger(ItemRequirementTest.class);
+
+    @Autowired
+    private Logger logger;
+    //private static final Logger logger = LoggerFactory.getLogger(ItemRequirementTest.class);
     private final ItemStore itemStore = new ItemStore();
 
     @Mock
