@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.Objects;
 
 public class BaseItem extends Item {
-    private String name;
+    private final String name;
 
     // Used for simplified BaseItem's in testing
     public BaseItem(String name)

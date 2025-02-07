@@ -6,8 +6,15 @@ import java.util.Map;
 public class CompositeItem extends Item {
 
     private final int craftProduces;
-    private Map<Item, Integer> requirements;
-    private String name;
+    private final Map<Item, Integer> requirements;
+    private final String name;
+
+    // Used for simplified BaseItem's in testing
+    CompositeItem(String name, Map<Item, Integer> requirements) {
+        this.name = name;
+        this.requirements = requirements;
+        this.craftProduces = 1;
+    }
 
     public CompositeItem(String name, Map<Item, Integer> requirements, ItemStore itemStore) {
         this.name = name;
