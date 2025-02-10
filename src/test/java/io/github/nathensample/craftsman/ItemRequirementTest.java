@@ -6,10 +6,10 @@ import io.github.nathensample.craftsman.items.Item;
 import io.github.nathensample.craftsman.items.ItemStore;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -25,11 +25,16 @@ public class ItemRequirementTest {
 
     @Autowired
     private Logger logger;
-    //private static final Logger logger = LoggerFactory.getLogger(ItemRequirementTest.class);
-    private final ItemStore itemStore = new ItemStore();
+
+    @Mock
+    private Logger mockLogger;
+
+    @InjectMocks
+    private ItemStore itemStore;
 
     @Mock
     private ItemStore mockItemStore;
+
     @Test
     public void testComputeRequirements() {
         //TODO: Replace with test which doesn't use the itemstore
@@ -45,8 +50,7 @@ public class ItemRequirementTest {
     }
 
     @Test
-    public void testRecipeWhichProducesMultiple()
-    {
+    public void testRecipeWhichProducesMultiple() {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
         BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
         CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2, mockItemStore);
@@ -60,8 +64,7 @@ public class ItemRequirementTest {
     }
 
     @Test
-    public void testRecipeWhichProducesMultipleAndHasFloatCraftRequirements()
-    {
+    public void testRecipeWhichProducesMultipleAndHasFloatCraftRequirements() {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
         BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
         CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2, mockItemStore);

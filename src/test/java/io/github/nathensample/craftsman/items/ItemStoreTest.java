@@ -4,9 +4,13 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Map;
 import java.util.Optional;
@@ -16,9 +20,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(MockitoExtension.class)
+@SpringBootTest
 public class ItemStoreTest {
-    private static final Logger logger = LoggerFactory.getLogger(ItemStoreTest.class);
-    private final ItemStore itemStore = new ItemStore();
+    @Autowired
+    private Logger logger;
+
+    @Mock
+    private Logger mockLogger;
+
+    @InjectMocks
+    private ItemStore itemStore;
 
     @BeforeAll
     public void setup()

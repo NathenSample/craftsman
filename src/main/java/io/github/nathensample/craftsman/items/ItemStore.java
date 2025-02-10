@@ -1,6 +1,8 @@
 package io.github.nathensample.craftsman.items;
 
 import jakarta.annotation.PostConstruct;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -9,6 +11,9 @@ import java.util.Optional;
 
 @Service
 public class ItemStore {
+
+    @Autowired
+    private Logger logger;
     Map<String, Item> getItemMap() {
         return itemMap;
     }
@@ -37,6 +42,15 @@ public class ItemStore {
         BaseItem lotus = new BaseItem("Lotus", this);
         BaseItem oats = new BaseItem("Oats", this);
         BaseItem antlerCoral = new BaseItem("Antler Coral", this);
+        BaseItem amethyst = new BaseItem("Amethyst");
+        BaseItem diamond = new BaseItem("Diamond");
+        BaseItem peanut = new BaseItem("Peanut");
+        BaseItem wheat = new BaseItem("Wheat");
+        BaseItem redCoral = new BaseItem("Red Coral");
+        BaseItem starlightArcheumDust = new BaseItem("Starlight Archeum Dust");
+        BaseItem starshardChip = new BaseItem("Starshard Chip");
+
+
 
         //BaseItem x = new BaseItem("y");
 
@@ -56,14 +70,24 @@ public class ItemStore {
         CompositeItem archeumIngot = new CompositeItem("Archeum Ingot", Map.of(archeumOre, 3), this);
         CompositeItem roughPolish =  new CompositeItem("Rough Polish", Map.of(charcoalStabilizer, 5, lotus, 30, oats, 30, antlerCoral, 20), this);
         CompositeItem mechanicalSpring = new CompositeItem("Mechanical Spring", Map.of(ironIngot, 20, copperIngot, 5, archeumIngot, 3, roughPolish, 1), this);
+        CompositeItem viscousGlossyOil = new CompositeItem("Viscous Glossy Oil", Map.of(charcoalStabilizer, 5, peanut, 30, wheat, 30, redCoral, 20), this);
+        CompositeItem exquisiteDiaphragm = new CompositeItem("Exquisite Diaphragm", Map.of(goldIngot, 5, amethyst, 3, diamond, 2, viscousGlossyOil, 1), this);
+        CompositeItem spiralAccelerator = new CompositeItem("Spiral Accelerator", Map.of(exquisiteDiaphragm, 2, mechanicalSpring, 2, alloyCombiner, 20), this);
+        CompositeItem starshardIngot = new CompositeItem("Starshard Ingot", Map.of(starshardChip, 3), this);
+        CompositeItem seabreezeEssence = new CompositeItem("Seabreeze Essence", Map.of(starshardIngot, 3, starlightArcheumDust, 1), this);
+        CompositeItem brightHeadlight = new CompositeItem("Bright Headlight", Map.of(seabreezeEssence, 2, alloyCombiner, 10), this);
 
 
 
+        //CompositeItem x = new CompositeItem("", Map.of(), this);
 
+
+        CompositeItem racingChassis = new CompositeItem("Racing Chassis", Map.of(brightHeadlight, 4, spiralAccelerator, 2), this); // WIP
         CompositeItem rampage = new CompositeItem("rampage test", Map.of(mechanicalSpring, 1, alloyCombiner, 1), this);
 
 
         //CompositeItem x = new CompositeItem("", Map.of(), this);
+        logger.info("ItemStore initialized. [{}] items in map.", getItemMap().size());
     }
 
     public Optional<Item> getItem(String name) {
