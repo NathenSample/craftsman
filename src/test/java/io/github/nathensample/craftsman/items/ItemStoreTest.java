@@ -83,4 +83,18 @@ public class ItemStoreTest {
 //        Map<Item, Integer> requirements = myItem.computeRequirements();
 //        assertEquals(7, requirements.size());
     }
+
+    @Test
+    public void rampageHasValidRequirements()
+    {
+        Optional<Item> myItemOpt = itemStore.getItem("Scroll: Rampage S200");
+        assertTrue(myItemOpt.isPresent());
+        Item myItem = myItemOpt.get();
+        Map<Item, Integer> requirements = myItem.computeRequirements();
+        logger.info(requirements.toString());
+        requirements.entrySet().forEach(es ->
+        {
+            logger.info(es.getKey() + " : " + es.getValue());
+        });
+    }
 }
