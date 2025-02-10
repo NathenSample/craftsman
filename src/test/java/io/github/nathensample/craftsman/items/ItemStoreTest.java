@@ -8,7 +8,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -32,20 +31,18 @@ public class ItemStoreTest {
     private ItemStore itemStore;
 
     @BeforeAll
-    public void setup()
-    {
+    public void setup() {
         itemStore.init();
     }
 
     @Test
-    public void getBasicItem()
-    {
+    public void getBasicItem() {
         Optional<Item> myItemOpt = itemStore.getItem("azalea");
         assertTrue(myItemOpt.isPresent());
     }
+
     @Test
-    public void strongWheelHasValidRequirements()
-    {
+    public void strongWheelHasValidRequirements() {
         Optional<Item> myItemOpt = itemStore.getItem("strong wheel");
         assertTrue(myItemOpt.isPresent());
         Item myItem = myItemOpt.get();
@@ -75,8 +72,7 @@ public class ItemStoreTest {
     }
 
     @Test
-    public void mechanicalSpringHasValidRequirements()
-    {
+    public void mechanicalSpringHasValidRequirements() {
 //        Optional<Item> myItemOpt = itemStore.getItem("rampage test");
 //        assertTrue(myItemOpt.isPresent());
 //        Item myItem = myItemOpt.get();
@@ -85,8 +81,7 @@ public class ItemStoreTest {
     }
 
     @Test
-    public void rampageHasValidRequirements()
-    {
+    public void rampageHasValidRequirements() {
         Optional<Item> myItemOpt = itemStore.getItem("Scroll: Rampage S200");
         assertTrue(myItemOpt.isPresent());
         Item myItem = myItemOpt.get();
