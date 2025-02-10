@@ -49,6 +49,9 @@ public class ItemStore {
         BaseItem redCoral = new BaseItem("Red Coral");
         BaseItem starlightArcheumDust = new BaseItem("Starlight Archeum Dust");
         BaseItem starshardChip = new BaseItem("Starshard Chip");
+        BaseItem rice = new BaseItem("Rice");
+        BaseItem corn = new BaseItem("Corn");
+        BaseItem dawnLakeEssence = new BaseItem("Dawn Lake Essence");
 
 
 

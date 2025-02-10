@@ -1,5 +1,7 @@
 package io.github.nathensample.craftsman.items;
 
+import io.github.nathensample.craftsman.util.StringUtils;
+
 import java.util.Map;
 import java.util.Objects;
 
@@ -9,11 +11,11 @@ public class BaseItem extends Item {
     // Used for simplified BaseItem's in testing
     public BaseItem(String name)
     {
-        this.name = name;
+        this.name = StringUtils.capitalizeWords(name);
     }
 
     public BaseItem(String name, ItemStore itemStore) {
-        this.name = name;
+        this.name = StringUtils.capitalizeWords(name);
         itemStore.addToItemMap(name, this);
     }
 

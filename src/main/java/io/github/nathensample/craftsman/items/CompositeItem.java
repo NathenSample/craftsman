@@ -1,5 +1,7 @@
 package io.github.nathensample.craftsman.items;
 
+import io.github.nathensample.craftsman.util.StringUtils;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -11,13 +13,13 @@ public class CompositeItem extends Item {
 
     // Used for simplified BaseItem's in testing
     CompositeItem(String name, Map<Item, Integer> requirements) {
-        this.name = name;
+        this.name = StringUtils.capitalizeWords(name);
         this.requirements = requirements;
         this.craftProduces = 1;
     }
 
     public CompositeItem(String name, Map<Item, Integer> requirements, ItemStore itemStore) {
-        this.name = name;
+        this.name = StringUtils.capitalizeWords(name);
         this.requirements = requirements;
         this.craftProduces = 1;
         itemStore.addToItemMap(name, this);
@@ -25,7 +27,7 @@ public class CompositeItem extends Item {
 
 
     public CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces, ItemStore itemStore) {
-        this.name = name;
+        this.name = StringUtils.capitalizeWords(name);
         this.requirements = requirements;
         this.craftProduces = craftProduces;
         itemStore.addToItemMap(name, this);
