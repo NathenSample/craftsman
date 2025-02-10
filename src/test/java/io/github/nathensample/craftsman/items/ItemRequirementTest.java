@@ -1,4 +1,4 @@
-package io.github.nathensample.craftsman;
+package io.github.nathensample.craftsman.items;
 
 import io.github.nathensample.craftsman.items.BaseItem;
 import io.github.nathensample.craftsman.items.CompositeItem;
@@ -53,10 +53,10 @@ public class ItemRequirementTest {
     public void testRecipeWhichProducesMultiple() {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
         BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
-        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2, mockItemStore);
+        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
 
         //Create  a test composite which should require 2 crafts of test Ingot
-        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 4), mockItemStore);
+        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 4));
 
         Map<Item, Integer> requirements = testComposite.computeRequirements();
         assertEquals(1, requirements.size());
@@ -67,10 +67,10 @@ public class ItemRequirementTest {
     public void testRecipeWhichProducesMultipleAndHasFloatCraftRequirements() {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
         BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
-        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2, mockItemStore);
+        CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
 
         //Create  a test composite which should require 2.5 crafts of test Ingot
-        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 5), mockItemStore);
+        CompositeItem testComposite = new CompositeItem("Test Composite", Map.of(testIngot, 5));
 
         Map<Item, Integer> requirements = testComposite.computeRequirements();
         assertEquals(1, requirements.size());

@@ -23,6 +23,15 @@ public class CompositeItem extends Item {
         this.labourCost = 1;
     }
 
+    CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces) {
+        this.name = StringUtils.capitalizeWords(name);
+        this.requirements = requirements;
+        this.craftProduces = craftProduces;
+        this.proficiency = Proficiency.UNCATEGORIZED;
+        this.labourCost = 1;
+    }
+
+
     public CompositeItem(String name, Map<Item, Integer> requirements, ItemStore itemStore, Proficiency proficiency, int labourCost) {
         this.name = StringUtils.capitalizeWords(name);
         this.requirements = requirements;

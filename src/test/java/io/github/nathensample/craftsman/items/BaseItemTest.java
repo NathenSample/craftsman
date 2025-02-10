@@ -1,4 +1,4 @@
-package io.github.nathensample.craftsman;
+package io.github.nathensample.craftsman.items;
 
 import io.github.nathensample.craftsman.items.BaseItem;
 import io.github.nathensample.craftsman.items.ItemStore;
