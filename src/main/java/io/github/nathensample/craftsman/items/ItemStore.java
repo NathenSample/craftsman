@@ -52,7 +52,9 @@ public class ItemStore {
         BaseItem rice = new BaseItem("Rice");
         BaseItem corn = new BaseItem("Corn");
         BaseItem dawnLakeEssence = new BaseItem("Dawn Lake Essence");
-
+        BaseItem flamingLog = new BaseItem("Flaming Log");
+        BaseItem mysteriousGardenPowder = new BaseItem("Mysterious Garden Powder");
+        BaseItem thunderStruckTree = new BaseItem("Thunderstruck Tree");
 
 
         //BaseItem x = new BaseItem("y");
@@ -79,13 +81,18 @@ public class ItemStore {
         CompositeItem starshardIngot = new CompositeItem("Starshard Ingot", Map.of(starshardChip, 3), this);
         CompositeItem seabreezeEssence = new CompositeItem("Seabreeze Essence", Map.of(starshardIngot, 3, starlightArcheumDust, 1), this);
         CompositeItem brightHeadlight = new CompositeItem("Bright Headlight", Map.of(seabreezeEssence, 2, alloyCombiner, 10), this);
-
+        CompositeItem smallSeedOil = new CompositeItem("Small Seed Oil", Map.of(charcoalStabilizer, 3, rice, 20, corn, 20), this);
+        CompositeItem hydraulicShift = new CompositeItem("Hydraulic Shift", Map.of(goldIngot, 8, ironIngot, 10,alloyCombiner, 5, dawnLakeEssence, 1, smallSeedOil, 1), this);
+        CompositeItem highPowerEngine = new CompositeItem("High Power Engine", Map.of(flamingLog, 5, silverIngot, 10, goldIngot, 10, archeumIngot, 1), this);
+        CompositeItem sunridgeIngot = new CompositeItem("Sunridge Ingot", Map.of(sturdyIngot, 10, mysteriousGardenPowder, 5, roughPolish, 1), this);
+        CompositeItem solidShaft = new CompositeItem("Solid Shaft", Map.of(thunderStruckTree, 2, sunridgeIngot, 1), this);
+        CompositeItem racingChassis = new CompositeItem("Racing Chassis", Map.of(solidShaft, 4, highPowerEngine, 2, hydraulicShift, 10, brightHeadlight, 4, spiralAccelerator, 2), this);
 
 
         //CompositeItem x = new CompositeItem("", Map.of(), this);
 
 
-        CompositeItem racingChassis = new CompositeItem("Racing Chassis", Map.of(brightHeadlight, 4, spiralAccelerator, 2), this); // WIP
+
         CompositeItem rampage = new CompositeItem("rampage test", Map.of(mechanicalSpring, 1, alloyCombiner, 1), this);
 
 
