@@ -19,19 +19,25 @@ public class CompositeItem extends Item {
         this.name = StringUtils.capitalizeWords(name);
         this.requirements = requirements;
         this.craftProduces = 1;
+        this.proficiency = Proficiency.UNCATEGORIZED;
+        this.labourCost = 1;
     }
 
-    public CompositeItem(String name, Map<Item, Integer> requirements, ItemStore itemStore) {
+    public CompositeItem(String name, Map<Item, Integer> requirements, ItemStore itemStore, Proficiency proficiency, int labourCost) {
         this.name = StringUtils.capitalizeWords(name);
         this.requirements = requirements;
         this.craftProduces = 1;
+        this.proficiency = proficiency;
+        this.labourCost = labourCost;
         itemStore.addToItemMap(name, this);
     }
 
-    public CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces, ItemStore itemStore) {
+    public CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces, ItemStore itemStore, Proficiency proficiency, int labourCost) {
         this.name = StringUtils.capitalizeWords(name);
         this.requirements = requirements;
         this.craftProduces = craftProduces;
+        this.proficiency = proficiency;
+        this.labourCost = labourCost;
         itemStore.addToItemMap(name, this);
     }
 
