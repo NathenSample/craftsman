@@ -19,7 +19,7 @@ public class ItemStore {
         return itemMap;
     }
 
-    private Map<String, Item> itemMap = new HashMap<>();
+    private final Map<String, Item> itemMap = new HashMap<>();
 
     @PostConstruct
     public void init() {
