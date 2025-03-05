@@ -82,8 +82,8 @@ public class ItemStoreTest {
 
     @Test
     public void rampageHasValidRequirements() {
-        logger.info("Computing requirements for Scroll: Rampage S200");
-        Optional<Item> myItemOpt = itemStore.getItem("Scroll: Rampage S200");
+        logger.info("Computing requirements for Sealed Delphinad Bow");
+        Optional<Item> myItemOpt = itemStore.getItem("Sealed Delphinad Bow");
         assertTrue(myItemOpt.isPresent());
         Item myItem = myItemOpt.get();
         Map<Item, Integer> requirements = myItem.computeRequirements();

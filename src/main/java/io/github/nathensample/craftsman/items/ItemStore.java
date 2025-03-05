@@ -111,7 +111,12 @@ public class ItemStore {
         CompositeItem scrollRampageS200Lite = new CompositeItem("Scroll: Rampage S200 Lite", Map.of(rampageS200Design, 1, craftedVehicleFrameRampageS200, 1, racingChassis, 1, rubberTire, 4), this, Proficiency.MACHINING, 25);
         CompositeItem scrollRampageS200 = new CompositeItem("Scroll: Rampage S200", Map.of(scrollRampageS200Lite, 1, vehicleUpgradeDevice, 6), this, Proficiency.MACHINING, 0);
         CompositeItem magnificentVolcanoBow = new CompositeItem("Magnificent Volcano Bow", Map.of(woodenManaWisp, 6), this, Proficiency.MACHINING, 500);
-        CompositeItem sealedEpheriumBow = new CompositeItem("Sealed Epherium Bow", Map.of(magnificentVolcanoBow, 1, sunlightArcheumEssence, 6, fineLumber, 8, archeumIngot, 5, gildaDust, 14), this, Proficiency.CARPENTRY, 650);
+        CompositeItem sealedEpheriumBow = new CompositeItem("Sealed Epherium Bow", Map.of(magnificentVolcanoBow, 1, sunlightArcheumEssence, 5, fineLumber, 16, archeumIngot, 8), this, Proficiency.CARPENTRY, 650);
+
+        //Highly simplified recipes not including previous weapon
+        CompositeItem sealedDelphinadBow = new CompositeItem("Sealed Delphinad Bow", Map.of(sunlightArcheumEssence, 7, nuriForestLumber, 5, archeumIngot, 15), this, Proficiency.CARPENTRY, 800);
+
+
         //CompositeItem x = new CompositeItem("", Map.of(), this);
         logger.info("ItemStore initialized. [{}] items in map.", getItemMap().size());
     }
