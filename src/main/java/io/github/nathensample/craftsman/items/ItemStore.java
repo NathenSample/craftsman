@@ -42,26 +42,30 @@ public class ItemStore {
         BaseItem lotus = new BaseItem("Lotus", this);
         BaseItem oats = new BaseItem("Oats", this);
         BaseItem antlerCoral = new BaseItem("Antler Coral", this);
-        BaseItem amethyst = new BaseItem("Amethyst");
-        BaseItem diamond = new BaseItem("Diamond");
-        BaseItem peanut = new BaseItem("Peanut");
-        BaseItem wheat = new BaseItem("Wheat");
-        BaseItem redCoral = new BaseItem("Red Coral");
-        BaseItem starlightArcheumDust = new BaseItem("Starlight Archeum Dust");
-        BaseItem starshardChip = new BaseItem("Starshard Chip");
-        BaseItem rice = new BaseItem("Rice");
-        BaseItem corn = new BaseItem("Corn");
-        BaseItem dawnLakeLightEssence = new BaseItem("Dawn Lake Light Essence");
-        BaseItem flamingLog = new BaseItem("Flaming Log");
-        BaseItem mysteriousGardenPowder = new BaseItem("Mysterious Garden Powder");
-        BaseItem thunderStruckTree = new BaseItem("Thunderstruck Tree");
-        BaseItem lily = new BaseItem("Lily");
-        BaseItem lordsCoin = new BaseItem("Lord's Coin");
-        BaseItem log = new BaseItem("Log");
-        BaseItem wool = new BaseItem("Wool");
-        BaseItem cornflower = new BaseItem("Cornflower");
-        BaseItem greenCoral = new BaseItem("Green Coral");
-        BaseItem pelt = new BaseItem("Pelt");
+        BaseItem amethyst = new BaseItem("Amethyst", this);
+        BaseItem diamond = new BaseItem("Diamond", this);
+        BaseItem peanut = new BaseItem("Peanut", this);
+        BaseItem wheat = new BaseItem("Wheat", this);
+        BaseItem redCoral = new BaseItem("Red Coral", this);
+        BaseItem starlightArcheumDust = new BaseItem("Starlight Archeum Dust", this);
+        BaseItem starshardChip = new BaseItem("Starshard Chip", this);
+        BaseItem rice = new BaseItem("Rice", this);
+        BaseItem corn = new BaseItem("Corn", this);
+        BaseItem dawnLakeLightEssence = new BaseItem("Dawn Lake Light Essence", this);
+        BaseItem flamingLog = new BaseItem("Flaming Log", this);
+        BaseItem mysteriousGardenPowder = new BaseItem("Mysterious Garden Powder", this);
+        BaseItem thunderStruckTree = new BaseItem("Thunderstruck Tree", this);
+        BaseItem lily = new BaseItem("Lily", this);
+        BaseItem lordsCoin = new BaseItem("Lord's Coin", this);
+        BaseItem log = new BaseItem("Log", this);
+        BaseItem wool = new BaseItem("Wool", this);
+        BaseItem cornflower = new BaseItem("Cornflower", this);
+        BaseItem greenCoral = new BaseItem("Green Coral", this);
+        BaseItem pelt = new BaseItem("Pelt", this);
+        BaseItem woodenManaWisp = new BaseItem("Wooden Mana wisp", this);
+        BaseItem sunlightArcheumEssence = new BaseItem("Sunlight Archeum Essence", this);
+        BaseItem gildaDust = new BaseItem("Gilda Dust", this);
+
 
         //BaseItem x = new BaseItem("y");
 
@@ -106,7 +110,8 @@ public class ItemStore {
         CompositeItem craftedVehicleFrameRampageS200 = new CompositeItem("Crafted Vehicle Frame: Rampage S200", Map.of(whitePigment, 10, nuriForestLumber, 10, cloudspunFabric, 10, windSpiritLeather, 10, goldIngot, 10), this, Proficiency.HANDICRAFTS, 50);
         CompositeItem scrollRampageS200Lite = new CompositeItem("Scroll: Rampage S200 Lite", Map.of(rampageS200Design, 1, craftedVehicleFrameRampageS200, 1, racingChassis, 1, rubberTire, 4), this, Proficiency.MACHINING, 25);
         CompositeItem scrollRampageS200 = new CompositeItem("Scroll: Rampage S200", Map.of(scrollRampageS200Lite, 1, vehicleUpgradeDevice, 6), this, Proficiency.MACHINING, 0);
-
+        CompositeItem magnificentVolcanoBow = new CompositeItem("Magnificent Volcano Bow", Map.of(woodenManaWisp, 6), this, Proficiency.MACHINING, 500);
+        CompositeItem sealedEpheriumBow = new CompositeItem("Sealed Epherium Bow", Map.of(magnificentVolcanoBow, 1, sunlightArcheumEssence, 6, fineLumber, 8, archeumIngot, 5, gildaDust, 14), this, Proficiency.CARPENTRY, 650);
         //CompositeItem x = new CompositeItem("", Map.of(), this);
         logger.info("ItemStore initialized. [{}] items in map.", getItemMap().size());
     }
