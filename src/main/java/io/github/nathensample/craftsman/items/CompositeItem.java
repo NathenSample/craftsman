@@ -16,7 +16,7 @@ public class CompositeItem extends Item {
     // Used for simplified BaseItem's in testing
     CompositeItem(String name, Map<Item, Integer> requirements) {
         this.name = StringUtils.capitalizeWords(name);
-        this.requirements = requirements;
+        this.requirements = Map.copyOf(requirements);
         this.craftProduces = 1;
         this.proficiency = Proficiency.UNCATEGORIZED;
         this.labourCost = 1;
@@ -24,7 +24,7 @@ public class CompositeItem extends Item {
 
     CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces) {
         this.name = StringUtils.capitalizeWords(name);
-        this.requirements = requirements;
+        this.requirements = Map.copyOf(requirements);
         this.craftProduces = craftProduces;
         this.proficiency = Proficiency.UNCATEGORIZED;
         this.labourCost = 1;
@@ -33,7 +33,7 @@ public class CompositeItem extends Item {
 
     public CompositeItem(String name, Map<Item, Integer> requirements, Proficiency proficiency, int labourCost) {
         this.name = StringUtils.capitalizeWords(name);
-        this.requirements = requirements;
+        this.requirements = Map.copyOf(requirements);
         this.craftProduces = 1;
         this.proficiency = proficiency;
         this.labourCost = labourCost;
@@ -41,7 +41,7 @@ public class CompositeItem extends Item {
 
     public CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces, Proficiency proficiency, int labourCost) {
         this.name = StringUtils.capitalizeWords(name);
-        this.requirements = requirements;
+        this.requirements = Map.copyOf(requirements);
         this.craftProduces = craftProduces;
         this.proficiency = proficiency;
         this.labourCost = labourCost;
