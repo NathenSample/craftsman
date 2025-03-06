@@ -29,7 +29,7 @@ public class BaseItem extends Item {
 
     @Override
     public String toString() {
-        return getName() + "(BaseItem)";
+        return getName();
     }
 
     @Override
