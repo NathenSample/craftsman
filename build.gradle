@@ -2,9 +2,12 @@ plugins {
     id 'org.springframework.boot' version '3.2.4'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
     id 'java'
+    id 'application'
 }
 
-group 'org.example'
+mainClassName = 'io.github.nathensample.craftsman.Craftsman'
+
+group 'io.github.nathensample'
 version '1.0-SNAPSHOT'
 
 repositories {

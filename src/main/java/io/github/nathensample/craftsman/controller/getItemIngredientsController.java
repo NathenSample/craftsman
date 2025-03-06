@@ -10,13 +10,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
 
 @Controller()
-@RequestMapping("/ingredients")
 public class getItemIngredientsController {
 
     @Autowired
@@ -27,9 +25,9 @@ public class getItemIngredientsController {
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    @GetMapping("/searchByName/{itemName}")
+    @GetMapping("/crafting-requirements")
     //TODO: Properly handle this exception
-    public ResponseEntity<String> getItemRecipe(@PathVariable String itemName) throws JsonProcessingException {
+    public ResponseEntity<String> getItemRecipe(@RequestParam String itemName) throws JsonProcessingException {
         Optional<Item> itemOpt = itemLookupTable.getItem(itemName);
 
         if (itemOpt.isPresent()) {
