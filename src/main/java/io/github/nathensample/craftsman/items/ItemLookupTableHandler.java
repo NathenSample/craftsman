@@ -64,6 +64,8 @@ public class ItemLookupTableHandler {
         BaseItem sunlightArcheumEssence = new BaseItem("Sunlight Archeum Essence");
         BaseItem gildaDust = new BaseItem("Gilda Dust");
         BaseItem ayanadWeaponsmithingScroll = new BaseItem("Ayanad Weaponsmithing Scroll");
+        BaseItem speedboatUpgradeTicket = new BaseItem("Speedboat Upgrade Ticket");
+        BaseItem seawhipSpeedboatDesign = new BaseItem("Seawhip Speedboat Design");
         //End BaseItem declaration
 
         //Begin CompositeItem declaration
@@ -91,11 +93,11 @@ public class ItemLookupTableHandler {
         CompositeItem seabreezeEssence = new CompositeItem("Seabreeze Essence", Map.of(starshardIngot, 3, starlightArcheumDust, 1), Proficiency.ALCHEMY, 15);
         CompositeItem brightHeadlight = new CompositeItem("Bright Headlight", Map.of(seabreezeEssence, 2, alloyCombiner, 10), Proficiency.MACHINING, 10);
         CompositeItem smallSeedOil = new CompositeItem("Small Seed Oil", Map.of(charcoalStabilizer, 3, rice, 20, corn, 20), Proficiency.ALCHEMY, 15);
-        CompositeItem hydraulicShift = new CompositeItem("Hydraulic Shift", Map.of(goldIngot, 8, ironIngot, 10, alloyCombiner, 5, dawnLakeLightEssence, 1, smallSeedOil, 1), Proficiency.MACHINING, 20);
+        CompositeItem hydraulicShaft = new CompositeItem("Hydraulic Shaft", Map.of(goldIngot, 8, ironIngot, 10, alloyCombiner, 5, dawnLakeLightEssence, 1, smallSeedOil, 1), Proficiency.MACHINING, 20);
         CompositeItem highPowerEngine = new CompositeItem("High Power Engine", Map.of(flamingLog, 5, silverIngot, 10, goldIngot, 10, archeumIngot, 1), Proficiency.MACHINING, 10);
         CompositeItem sunridgeIngot = new CompositeItem("Sunridge Ingot", Map.of(sturdyIngot, 10, mysteriousGardenPowder, 5, roughPolish, 1), Proficiency.METALWORK, 20);
         CompositeItem solidShaft = new CompositeItem("Solid Shaft", Map.of(thunderStruckTree, 2, sunridgeIngot, 1), Proficiency.MACHINING, 10);
-        CompositeItem racingChassis = new CompositeItem("Racing Chassis", Map.of(solidShaft, 4, highPowerEngine, 2, hydraulicShift, 10, brightHeadlight, 4, spiralAccelerator, 2), Proficiency.MACHINING, 50);
+        CompositeItem racingChassis = new CompositeItem("Racing Chassis", Map.of(solidShaft, 4, highPowerEngine, 2, hydraulicShaft, 10, brightHeadlight, 4, spiralAccelerator, 2), Proficiency.MACHINING, 50);
         CompositeItem whitePigment = new CompositeItem("White Pigment", Map.of(lily, 200, dawnLakeLightEssence, 1), Proficiency.ALCHEMY, 25);
         CompositeItem lumber = new CompositeItem("Lumber", Map.of(log, 3), Proficiency.CARPENTRY, 5);
         CompositeItem fineLumber = new CompositeItem("Fine Lumber", Map.of(lumber, 10, smallSeedOil, 1), Proficiency.CARPENTRY, 10);
@@ -115,6 +117,9 @@ public class ItemLookupTableHandler {
         //Highly simplified recipes not including previous weapon
         CompositeItem sealedDelphinadBow = new CompositeItem("Sealed Delphinad Bow", Map.of(sunlightArcheumEssence, 7, nuriForestLumber, 5, archeumIngot, 15), Proficiency.CARPENTRY, 800);
         CompositeItem sealedAyanadBow = new CompositeItem("Sealed Ayanad Bow", Map.of(sunlightArcheumEssence, 11, nuriForestLumber, 8, archeumIngot, 31, ayanadWeaponsmithingScroll, 1), Proficiency.CARPENTRY, 800);
+        //End highly simplfied recipes
+
+        CompositeItem scrollSeawhipSpeedboat = new CompositeItem("Scroll: Seawhip Speedboat", Map.of(seawhipSpeedboatDesign, 1, hydraulicShaft, 4, highPowerEngine, 1, spiralAccelerator, 2, sturdyIngot, 10, fineLumber, 20), Proficiency.CARPENTRY, 25);
         //End CompositeItem declaration
 
         return Map.ofEntries(
@@ -162,6 +167,8 @@ public class ItemLookupTableHandler {
                 Map.entry("Sunlight Archeum Essence", sunlightArcheumEssence),
                 Map.entry("Gilda Dust", gildaDust),
                 Map.entry("Ayanad Weaponsmithing Scroll", ayanadWeaponsmithingScroll),
+                Map.entry("Speedboat Upgrade Ticket", speedboatUpgradeTicket),
+                Map.entry("Seawhip Speedboat Design", seawhipSpeedboatDesign),
 
                 // CompositeItems
                 Map.entry("Small Root Pigment", smallRootPigment),
@@ -188,7 +195,7 @@ public class ItemLookupTableHandler {
                 Map.entry("Seabreeze Essence", seabreezeEssence),
                 Map.entry("Bright Headlight", brightHeadlight),
                 Map.entry("Small Seed Oil", smallSeedOil),
-                Map.entry("Hydraulic Shift", hydraulicShift),
+                Map.entry("Hydraulic Shift", hydraulicShaft),
                 Map.entry("High Power Engine", highPowerEngine),
                 Map.entry("Sunridge Ingot", sunridgeIngot),
                 Map.entry("Solid Shaft", solidShaft),
@@ -208,7 +215,8 @@ public class ItemLookupTableHandler {
                 Map.entry("Magnificent Volcano Bow", magnificentVolcanoBow),
                 Map.entry("Sealed Epherium Bow", sealedEpheriumBow),
                 Map.entry("Sealed Delphinad Bow", sealedDelphinadBow),
-                Map.entry("Sealed Ayanad Bow", sealedAyanadBow)
+                Map.entry("Sealed Ayanad Bow", sealedAyanadBow),
+                Map.entry("Scroll: Seawhip Speedboat", scrollSeawhipSpeedboat)
         );
     }
 

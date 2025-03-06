@@ -70,18 +70,4 @@ public class ItemLookupHandlerTest {
         assertTrue(requirements.containsKey(new BaseItem("Iron Ore")));
         assertEquals(24, requirements.get(new BaseItem("Iron Ore")));
     }
-
-//    @Test
-//    public void rampageHasValidRequirements() {
-//        logger.info("Computing requirements for sealedAyanadBow");
-//        Optional<Item> myItemOpt = itemStore.getItem("Sealed Ayanad Bow");
-//        assertTrue(myItemOpt.isPresent());
-//        Item myItem = myItemOpt.get();
-//        Map<Item, Integer> requirements = myItem.computeRequirements();
-//        //logger.info(requirements.toString());
-//        requirements.entrySet().forEach(es ->
-//        {
-//            logger.info(es.getKey() + " : " + es.getValue());
-//        });
-//    }
 }
