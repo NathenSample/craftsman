@@ -115,8 +115,8 @@ public class ItemLookupTable {
 
 
         //Highly simplified recipes not including previous weapon
-        CompositeItem sealedDelphinadBow = new CompositeItem("Sealed Delphinad Bow", Map.of(sunlightArcheumEssence, 7, nuriForestLumber, 5, archeumIngot, 15), Proficiency.CARPENTRY, 800);
-        CompositeItem sealedAyanadBow = new CompositeItem("Sealed Ayanad Bow", Map.of(sunlightArcheumEssence, 11, nuriForestLumber, 8, archeumIngot, 31, ayanadWeaponsmithingScroll, 1), Proficiency.CARPENTRY, 800);
+        CompositeItem sealedDelphinadBow = new CompositeItem("Sealed Delphinad Bow", Map.of(sealedEpheriumBow, 7, sunlightArcheumEssence, 7, nuriForestLumber, 5, archeumIngot, 15), Proficiency.CARPENTRY, 800);
+        CompositeItem sealedAyanadBow = new CompositeItem("Sealed Ayanad Bow", Map.of(sealedDelphinadBow, 7, sunlightArcheumEssence, 11, nuriForestLumber, 8, archeumIngot, 31, ayanadWeaponsmithingScroll, 1), Proficiency.CARPENTRY, 800);
         //End highly simplfied recipes
 
         CompositeItem scrollSeawhipSpeedboat = new CompositeItem("Scroll: Seawhip Speedboat", Map.of(seawhipSpeedboatDesign, 1, hydraulicShaft, 4, highPowerEngine, 1, spiralAccelerator, 2, sturdyIngot, 10, fineLumber, 20), Proficiency.CARPENTRY, 25);
