@@ -1,6 +1,5 @@
 package io.github.nathensample.craftsman.items;
 
-import io.github.nathensample.craftsman.enums.Proficiency;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,17 +9,14 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-public class ItemLookupHandler {
+public class ItemLookupTableHandler {
 
     @Autowired
     private Logger logger;
-    Map<String, Item> getItemMap() {
-        return itemMap;
-    }
 
-    private final Map<String, Item> itemMap = initializeLookupTable();
+    private static final Map<String, Item> ITEM_LOOKUP_TABLE = initializeLookupTable();
 
-    private Map<String, Item> initializeLookupTable() {
+    private static Map<String, Item> initializeLookupTable() {
         //Begin BaseItem declaration
         BaseItem clothManaWisp = new BaseItem(("Cloth Mana Wisp"));
         BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer");
@@ -215,11 +211,10 @@ public class ItemLookupHandler {
 
     @PostConstruct
     public void init() {
-
-        logger.info("ItemStore initialized. [{}] items in map.", getItemMap().size());
+        logger.info("ItemStore initialized. [{}] items in map.", ITEM_LOOKUP_TABLE.size());
     }
 
     public Optional<Item> getItem(String name) {
-        return Optional.ofNullable(itemMap.get(name.toLowerCase()));
+        return Optional.ofNullable(ITEM_LOOKUP_TABLE.get(name.toLowerCase()));
     }
 }

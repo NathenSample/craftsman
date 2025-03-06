@@ -1,4 +1,4 @@
-package io.github.nathensample.craftsman.enums;
+package io.github.nathensample.craftsman.items;
 
 public enum Proficiency {
 

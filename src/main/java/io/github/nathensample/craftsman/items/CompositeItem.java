@@ -1,6 +1,5 @@
 package io.github.nathensample.craftsman.items;
 
-import io.github.nathensample.craftsman.enums.Proficiency;
 import io.github.nathensample.craftsman.util.StringUtils;
 
 import java.util.LinkedHashMap;

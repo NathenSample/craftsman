@@ -28,7 +28,7 @@ public class ItemLookupHandlerTest {
     private Logger mockLogger;
 
     @InjectMocks
-    private ItemLookupHandler itemStore;
+    private ItemLookupTableHandler itemStore;
 
     @BeforeAll
     public void setup() {
