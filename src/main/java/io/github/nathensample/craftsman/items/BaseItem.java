@@ -14,7 +14,7 @@ public class BaseItem extends Item {
         this.name = StringUtils.capitalizeWords(name);
     }
 
-    public BaseItem(String name, ItemStore itemStore) {
+    public BaseItem(String name, ItemLookupHandler itemStore) {
         this.name = StringUtils.capitalizeWords(name);
         itemStore.addToItemMap(name, this);
     }

@@ -32,7 +32,7 @@ public class CompositeItem extends Item {
     }
 
 
-    public CompositeItem(String name, Map<Item, Integer> requirements, ItemStore itemStore, Proficiency proficiency, int labourCost) {
+    public CompositeItem(String name, Map<Item, Integer> requirements, ItemLookupHandler itemStore, Proficiency proficiency, int labourCost) {
         this.name = StringUtils.capitalizeWords(name);
         this.requirements = requirements;
         this.craftProduces = 1;
@@ -41,7 +41,7 @@ public class CompositeItem extends Item {
         itemStore.addToItemMap(name, this);
     }
 
-    public CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces, ItemStore itemStore, Proficiency proficiency, int labourCost) {
+    public CompositeItem(String name, Map<Item, Integer> requirements, int craftProduces, ItemLookupHandler itemStore, Proficiency proficiency, int labourCost) {
         this.name = StringUtils.capitalizeWords(name);
         this.requirements = requirements;
         this.craftProduces = craftProduces;

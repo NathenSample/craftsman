@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(MockitoExtension.class)
 @SpringBootTest
-public class ItemStoreTest {
+public class ItemLookupHandlerTest {
     @Autowired
     private Logger logger;
 
@@ -28,7 +28,7 @@ public class ItemStoreTest {
     private Logger mockLogger;
 
     @InjectMocks
-    private ItemStore itemStore;
+    private ItemLookupHandler itemStore;
 
     @BeforeAll
     public void setup() {
@@ -82,8 +82,8 @@ public class ItemStoreTest {
 
     @Test
     public void rampageHasValidRequirements() {
-        logger.info("Computing requirements for Sealed Delphinad Bow");
-        Optional<Item> myItemOpt = itemStore.getItem("Sealed Delphinad Bow");
+        logger.info("Computing requirements for sealedAyanadBow");
+        Optional<Item> myItemOpt = itemStore.getItem("Sealed Ayanad Bow");
         assertTrue(myItemOpt.isPresent());
         Item myItem = myItemOpt.get();
         Map<Item, Integer> requirements = myItem.computeRequirements();

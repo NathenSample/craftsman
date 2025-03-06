@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-public class ItemStore {
+public class ItemLookupHandler {
 
     @Autowired
     private Logger logger;
@@ -65,6 +65,8 @@ public class ItemStore {
         BaseItem woodenManaWisp = new BaseItem("Wooden Mana wisp", this);
         BaseItem sunlightArcheumEssence = new BaseItem("Sunlight Archeum Essence", this);
         BaseItem gildaDust = new BaseItem("Gilda Dust", this);
+        BaseItem ayanadWeaponsmithingScroll = new BaseItem("Ayanad Weaponsmithing Scroll", this);
+
 
 
         //BaseItem x = new BaseItem("y");
@@ -115,6 +117,7 @@ public class ItemStore {
 
         //Highly simplified recipes not including previous weapon
         CompositeItem sealedDelphinadBow = new CompositeItem("Sealed Delphinad Bow", Map.of(sunlightArcheumEssence, 7, nuriForestLumber, 5, archeumIngot, 15), this, Proficiency.CARPENTRY, 800);
+        CompositeItem sealedAyanadBow = new CompositeItem("Sealed Ayanad Bow", Map.of(sunlightArcheumEssence, 11, nuriForestLumber, 8, archeumIngot, 31, ayanadWeaponsmithingScroll, 1), this, Proficiency.CARPENTRY, 800);
 
 
         //CompositeItem x = new CompositeItem("", Map.of(), this);
