@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @Service
-public class ItemLookupTableHandler {
+public class ItemLookupTable {
 
     @Autowired
     private Logger logger;

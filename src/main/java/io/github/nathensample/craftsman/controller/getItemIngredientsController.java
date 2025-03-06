@@ -3,7 +3,7 @@ package io.github.nathensample.craftsman.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.nathensample.craftsman.items.Item;
-import io.github.nathensample.craftsman.items.ItemLookupTableHandler;
+import io.github.nathensample.craftsman.items.ItemLookupTable;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,14 +23,14 @@ public class getItemIngredientsController {
     private Logger logger;
 
     @Autowired
-    private ItemLookupTableHandler itemLookupTableHandler;
+    private ItemLookupTable itemLookupTable;
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     @GetMapping("/searchByName/{itemName}")
     //TODO: Properly handle this exception
     public ResponseEntity<String> getItemRecipe(@PathVariable String itemName) throws JsonProcessingException {
-        Optional<Item> itemOpt = itemLookupTableHandler.getItem(itemName);
+        Optional<Item> itemOpt = itemLookupTable.getItem(itemName);
 
         if (itemOpt.isPresent()) {
             String json = OBJECT_MAPPER.writeValueAsString(itemOpt.get().computeRequirements());

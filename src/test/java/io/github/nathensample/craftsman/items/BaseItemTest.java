@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 public class BaseItemTest {
 
     @Mock
-    private ItemLookupTableHandler mockItemStore;
+    private ItemLookupTable mockItemStore;
 
     @Test
     public void positiveEqualityTest() {

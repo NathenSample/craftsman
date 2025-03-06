@@ -26,10 +26,10 @@ public class ItemRequirementTest {
     private Logger mockLogger;
 
     @InjectMocks
-    private ItemLookupTableHandler itemStore;
+    private ItemLookupTable itemStore;
 
     @Mock
-    private ItemLookupTableHandler mockItemStore;
+    private ItemLookupTable mockItemStore;
 
     @Test
     public void testComputeRequirements() {
