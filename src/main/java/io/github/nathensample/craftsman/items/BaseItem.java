@@ -8,15 +8,8 @@ import java.util.Objects;
 public class BaseItem extends Item {
     private final String name;
 
-    // Used for simplified BaseItem's in testing
-    public BaseItem(String name)
-    {
+    public BaseItem(String name) {
         this.name = StringUtils.capitalizeWords(name);
-    }
-
-    public BaseItem(String name, ItemLookupHandler itemStore) {
-        this.name = StringUtils.capitalizeWords(name);
-        itemStore.addToItemMap(name, this);
     }
 
     @Override

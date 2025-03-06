@@ -48,7 +48,7 @@ public class ItemRequirementTest {
     @Test
     public void testRecipeWhichProducesMultiple() {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
-        BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
+        BaseItem testOre = new BaseItem("Test Ore");
         CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
 
         //Create  a test composite which should require 2 crafts of test Ingot
@@ -62,7 +62,7 @@ public class ItemRequirementTest {
     @Test
     public void testRecipeWhichProducesMultipleAndHasFloatCraftRequirements() {
         //Create a test Ingot which requires 3 ore, to make 2 ingots
-        BaseItem testOre = new BaseItem("Test Ore", mockItemStore);
+        BaseItem testOre = new BaseItem("Test Ore");
         CompositeItem testIngot = new CompositeItem("Test Ingot", Map.of(testOre, 3), 2);
 
         //Create  a test composite which should require 2.5 crafts of test Ingot

@@ -16,21 +16,21 @@ public class BaseItemTest {
 
     @Test
     public void positiveEqualityTest() {
-        BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer", mockItemStore); //Charcoal Stabilizer
-        BaseItem otherCharcoalStabilizer = new BaseItem("Charcoal Stabilizer", mockItemStore); //Charcoal Stabilizer
+        BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer"); //Charcoal Stabilizer
+        BaseItem otherCharcoalStabilizer = new BaseItem("Charcoal Stabilizer"); //Charcoal Stabilizer
         assertEquals(charcoalStabilizer, otherCharcoalStabilizer);
     }
 
     @Test
     public void negativeEqualityTestWithBaseItem() {
-        BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer", mockItemStore); //Charcoal Stabilizer
-        BaseItem bobGeldof = new BaseItem("Bob Geldof", mockItemStore); //Bob Geldof
+        BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer"); //Charcoal Stabilizer
+        BaseItem bobGeldof = new BaseItem("Bob Geldof"); //Bob Geldof
         assertNotEquals(charcoalStabilizer, bobGeldof);
     }
 
     @Test
     public void negativeEqualityTestWithRandomObj() {
-        BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer", mockItemStore); //Charcoal Stabilizer
+        BaseItem charcoalStabilizer = new BaseItem("Charcoal Stabilizer"); //Charcoal Stabilizer
         String bobGeldofStr = "Bob Geldof";
         assertNotEquals(charcoalStabilizer, bobGeldofStr);
     }
