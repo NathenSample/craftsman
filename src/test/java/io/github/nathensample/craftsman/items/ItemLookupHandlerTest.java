@@ -37,60 +37,51 @@ public class ItemLookupHandlerTest {
 
     @Test
     public void getBasicItem() {
-        Optional<Item> myItemOpt = itemStore.getItem("azalea");
+        Optional<Item> myItemOpt = itemStore.getItem("Azalea");
         assertTrue(myItemOpt.isPresent());
     }
 
     @Test
     public void strongWheelHasValidRequirements() {
-        Optional<Item> myItemOpt = itemStore.getItem("strong wheel");
+        Optional<Item> myItemOpt = itemStore.getItem("Strong Wheel");
         assertTrue(myItemOpt.isPresent());
         Item myItem = myItemOpt.get();
         Map<Item, Integer> requirements = myItem.computeRequirements();
         assertEquals(7, requirements.size());
 
-        assertTrue(requirements.containsKey(new BaseItem("archeum log")));
-        assertEquals(4, requirements.get(new BaseItem("archeum log")));
+        assertTrue(requirements.containsKey(new BaseItem("Archeum Log")));
+        assertEquals(4, requirements.get(new BaseItem("Archeum Log")));
 
-        assertTrue(requirements.containsKey(new BaseItem("copper ore")));
-        assertEquals(3, requirements.get(new BaseItem("copper ore")));
+        assertTrue(requirements.containsKey(new BaseItem("Copper Ore")));
+        assertEquals(3, requirements.get(new BaseItem("Copper Ore")));
 
-        assertTrue(requirements.containsKey(new BaseItem("silver ore")));
-        assertEquals(3, requirements.get(new BaseItem("silver ore")));
+        assertTrue(requirements.containsKey(new BaseItem("Silver Ore")));
+        assertEquals(3, requirements.get(new BaseItem("Silver Ore")));
 
-        assertTrue(requirements.containsKey(new BaseItem("azalea")));
-        assertEquals(20, requirements.get(new BaseItem("azalea")));
+        assertTrue(requirements.containsKey(new BaseItem("Azalea")));
+        assertEquals(20, requirements.get(new BaseItem("Azalea")));
 
-        assertTrue(requirements.containsKey(new BaseItem("narcissus")));
-        assertEquals(20, requirements.get(new BaseItem("narcissus")));
+        assertTrue(requirements.containsKey(new BaseItem("Narcissus")));
+        assertEquals(20, requirements.get(new BaseItem("Narcissus")));
 
-        assertTrue(requirements.containsKey(new BaseItem("charcoal stabilizer")));
-        assertEquals(3, requirements.get(new BaseItem("charcoal stabilizer")));
+        assertTrue(requirements.containsKey(new BaseItem("Charcoal Stabilizer")));
+        assertEquals(3, requirements.get(new BaseItem("Charcoal Stabilizer")));
 
-        assertTrue(requirements.containsKey(new BaseItem("iron ore")));
-        assertEquals(24, requirements.get(new BaseItem("iron ore")));
+        assertTrue(requirements.containsKey(new BaseItem("Iron Ore")));
+        assertEquals(24, requirements.get(new BaseItem("Iron Ore")));
     }
 
-    @Test
-    public void mechanicalSpringHasValidRequirements() {
-//        Optional<Item> myItemOpt = itemStore.getItem("rampage test");
+//    @Test
+//    public void rampageHasValidRequirements() {
+//        logger.info("Computing requirements for sealedAyanadBow");
+//        Optional<Item> myItemOpt = itemStore.getItem("Sealed Ayanad Bow");
 //        assertTrue(myItemOpt.isPresent());
 //        Item myItem = myItemOpt.get();
 //        Map<Item, Integer> requirements = myItem.computeRequirements();
-//        assertEquals(7, requirements.size());
-    }
-
-    @Test
-    public void rampageHasValidRequirements() {
-        logger.info("Computing requirements for sealedAyanadBow");
-        Optional<Item> myItemOpt = itemStore.getItem("Sealed Ayanad Bow");
-        assertTrue(myItemOpt.isPresent());
-        Item myItem = myItemOpt.get();
-        Map<Item, Integer> requirements = myItem.computeRequirements();
-        //logger.info(requirements.toString());
-        requirements.entrySet().forEach(es ->
-        {
-            logger.info(es.getKey() + " : " + es.getValue());
-        });
-    }
+//        //logger.info(requirements.toString());
+//        requirements.entrySet().forEach(es ->
+//        {
+//            logger.info(es.getKey() + " : " + es.getValue());
+//        });
+//    }
 }

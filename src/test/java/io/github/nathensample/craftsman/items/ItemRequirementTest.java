@@ -35,7 +35,7 @@ public class ItemRequirementTest {
     public void testComputeRequirements() {
         //TODO: Replace with test which doesn't use the itemstore
         itemStore.init();
-        Optional<Item> myItemOpt = itemStore.getItem("sealed epherium sash");
+        Optional<Item> myItemOpt = itemStore.getItem("Sealed Epherium Sash");
         assertTrue(myItemOpt.isPresent());
         Item myItem = myItemOpt.get();
         Map<Item, Integer> requirements = myItem.computeRequirements();

@@ -215,6 +215,6 @@ public class ItemLookupTableHandler {
     }
 
     public Optional<Item> getItem(String name) {
-        return Optional.ofNullable(ITEM_LOOKUP_TABLE.get(name.toLowerCase()));
+        return Optional.ofNullable(ITEM_LOOKUP_TABLE.get(name));
     }
 }
