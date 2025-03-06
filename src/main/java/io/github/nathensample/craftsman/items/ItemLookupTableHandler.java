@@ -120,6 +120,7 @@ public class ItemLookupTableHandler {
         //End highly simplfied recipes
 
         CompositeItem scrollSeawhipSpeedboat = new CompositeItem("Scroll: Seawhip Speedboat", Map.of(seawhipSpeedboatDesign, 1, hydraulicShaft, 4, highPowerEngine, 1, spiralAccelerator, 2, sturdyIngot, 10, fineLumber, 20), Proficiency.CARPENTRY, 25);
+        CompositeItem scrollSeaskimmerSpeedboat = new CompositeItem("Scroll: Seaskimmer Speedboat", Map.of(scrollSeawhipSpeedboat, 1, speedboatUpgradeTicket, 1), Proficiency.CARPENTRY, 0);
         //End CompositeItem declaration
 
         return Map.ofEntries(
@@ -216,7 +217,8 @@ public class ItemLookupTableHandler {
                 Map.entry("Sealed Epherium Bow", sealedEpheriumBow),
                 Map.entry("Sealed Delphinad Bow", sealedDelphinadBow),
                 Map.entry("Sealed Ayanad Bow", sealedAyanadBow),
-                Map.entry("Scroll: Seawhip Speedboat", scrollSeawhipSpeedboat)
+                Map.entry("Scroll: Seawhip Speedboat", scrollSeawhipSpeedboat),
+                Map.entry("Scroll: Seaskimmer Speedboat", scrollSeaskimmerSpeedboat)
         );
     }
 
