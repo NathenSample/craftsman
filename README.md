@@ -109,7 +109,7 @@ You can pass a configuration in the API request to customize the results.
 * Open a [pull request](https://github.com/NathenSample/craftsman/pulls)
 
 ## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/NathenSample/craftsman/blob/master/LICENSE) file for details.
 
 ## Questions or Issues?
 If you encounter any issues or have questions, feel free to open an issue or submit a pull request. Happy crafting!
