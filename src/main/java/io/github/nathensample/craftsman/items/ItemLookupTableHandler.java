@@ -14,6 +14,9 @@ public class ItemLookupTableHandler {
     @Autowired
     private Logger logger;
 
+    //TODO:
+    // Long term we likely need to use something like a multimap, since there's multiple crafts for the same item,
+    // but for now we'll just not include alternative recipes, this would also hugely change the recursion logic
     private static final Map<String, Item> ITEM_LOOKUP_TABLE = initializeLookupTable();
 
     private static Map<String, Item> initializeLookupTable() {
