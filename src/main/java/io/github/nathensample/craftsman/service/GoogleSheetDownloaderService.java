@@ -8,6 +8,9 @@ import com.google.api.client.json.gson.GsonFactory;
 import com.google.api.client.json.jackson2.JacksonFactory;
 import com.google.api.services.sheets.v4.Sheets;
 import com.google.api.services.sheets.v4.model.ValueRange;
+import io.github.nathensample.craftsman.configuration.CraftsmanConfiguration;
+import jakarta.annotation.PostConstruct;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -22,16 +25,14 @@ public class GoogleSheetDownloaderService {
     private static final JacksonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final String RANGE = "Sheet1!A1:D10";  // TODO: Adjust range as needed
 
-    @Value("${applicationName}")
-    private String APPLICATION_NAME;
-
-    @Value("${serviceAccountKeyPath}")
-    private String SERVICE_ACCOUNT_KEY_PATH;
-
-    @Value("${spreadsheetID}")
-    private String SPREADSHEET_ID;
+    @Autowired
+    private CraftsmanConfiguration craftsmanConfiguration;
 
 
+    @PostConstruct
+    public void init() throws GeneralSecurityException, IOException {
+        readSheetData(getSheetsService());
+    }
     private Sheets getSheetsService() throws IOException, GeneralSecurityException {
         HttpTransport httpTransport = GoogleNetHttpTransport.newTrustedTransport();
         GoogleCredential credential = GoogleCredential
