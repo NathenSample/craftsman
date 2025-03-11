@@ -66,6 +66,9 @@ public class ItemLookupTable {
         BaseItem ayanadWeaponsmithingScroll = new BaseItem("Ayanad Weaponsmithing Scroll");
         BaseItem speedboatUpgradeTicket = new BaseItem("Speedboat Upgrade Ticket");
         BaseItem seawhipSpeedboatDesign = new BaseItem("Seawhip Speedboat Design");
+        BaseItem veiledFlame = new BaseItem("Veiled Flame");
+        BaseItem medicinalPowder = new BaseItem("Medicinal Powder");
+        BaseItem lavender = new BaseItem("Lavender");
         //End BaseItem declaration
 
         //Begin CompositeItem declaration
@@ -112,7 +115,7 @@ public class ItemLookupTable {
         CompositeItem scrollRampageS200 = new CompositeItem("Scroll: Rampage S200", Map.of(scrollRampageS200Lite, 1, vehicleUpgradeDevice, 6), Proficiency.MACHINING, 0);
         CompositeItem magnificentVolcanoBow = new CompositeItem("Magnificent Volcano Bow", Map.of(woodenManaWisp, 6), Proficiency.MACHINING, 500);
         CompositeItem sealedEpheriumBow = new CompositeItem("Sealed Epherium Bow", Map.of(magnificentVolcanoBow, 1, sunlightArcheumEssence, 5, fineLumber, 16, archeumIngot, 8), Proficiency.CARPENTRY, 650);
-
+        CompositeItem hushedStar = new CompositeItem("Hushed Star", Map.of(veiledFlame, 10, medicinalPowder, 8, lavender, 20), 10, Proficiency.ALCHEMY, 0); //TODO: Add correct labour cost
 
         //Highly simplified recipes not including previous weapon
         CompositeItem sealedDelphinadBow = new CompositeItem("Sealed Delphinad Bow", Map.of(sealedEpheriumBow, 7, sunlightArcheumEssence, 7, nuriForestLumber, 5, archeumIngot, 15), Proficiency.CARPENTRY, 800);

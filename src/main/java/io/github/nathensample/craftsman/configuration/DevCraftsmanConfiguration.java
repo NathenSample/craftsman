@@ -9,17 +9,17 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-@Profile("live")
-public class CraftsmanConfiguration {
+@Profile("dev")
+public class DevCraftsmanConfiguration {
 
     @Bean
     public String applicationName() {
-        return "Craftsman";
+        return "Craftsman - Dev";
     }
 
     @Bean
     public String spreadsheetID() {
-        return "ID";//TODO: real IDs
+        return "test123";//TODO: real IDs
     }
 
     @Bean
