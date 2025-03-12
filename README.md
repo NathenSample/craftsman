@@ -18,7 +18,7 @@ Craftsman is a Java Spring Boot application designed to help players of the game
 
 After you have cloned the repository you will have to update the `application.yml` with values appropriate to your configuration. An example file is provided.
 
-A Google GCP api key can be found by following [these](https://support.google.com/googleapi/answer/6158862?hl=en) steps.
+A Google GCP API key can be found by following [these](https://support.google.com/googleapi/answer/6158862?hl=en) steps.
 
 ## Installation and Running Locally
 
