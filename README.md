@@ -66,6 +66,33 @@ The application will be available at `http://localhost:8080`.
    }
    ```
 
+### Get Market History
+* **URL:** `/market-history`
+* **Method:** `GET`
+* **Query Parameters:**
+    * `itemName` (required): Name of the item to query for.
+
+#### Example Request:
+
+   ```bash
+   GET localhost:8080/market-history?itemName=Resplendent+Weapon+Regrade+Scroll
+   ```
+
+#### Example Response:
+
+   ```json
+{
+      "itemId": 28296,
+      "itemName": "Resplendent Weapon Regrade Scroll",
+      "oneDayAveragePrice": 738.2487,
+      "oneDayHourVolume": 10,
+      "sevenDayAveragePrice": 788.8772,
+      "sevenDayVolume": 94,
+      "thirtyAveragePrice": 823.3326,
+      "thirtyDayVolume": 607
+}
+   ```
+
 
 ## API Endpoints (Planned)
 ### Get Crafting Requirements
