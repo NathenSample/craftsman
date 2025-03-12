@@ -40,9 +40,9 @@ class GoogleSheetDownloaderServiceTest {
         List<List<Object>> values = new ArrayList<>();
 
         // Add your sample rows here
-        values.add(List.of(98, "Decorative Vase", "", "", "", "", 2.23, 1));
-        values.add(List.of(99, "Lucky Azalea Vase", "", "", 7, 1, 7.75, 4));
-        values.add(List.of(100, "Ebony Bonsai Flowerpot", "", "", 6.25, 1, 5.708333333, 6));
+        values.add(List.of("98", "Decorative Vase", "", "", "", "", 2.23, 1));
+        values.add(List.of("99", "Lucky Azalea Vase", "", "", 7, 1, 7.75, 4));
+        values.add(List.of("100", "Ebony Bonsai Flowerpot", "", "", 6.25, 1, 5.708333333, 6));
 
         googleSheetDownloaderService.extractAndPublishMarketHistory(values);
         verify(marketHistoryLookupTable).publishHistory(argThat(list -> list.size() == 3));
