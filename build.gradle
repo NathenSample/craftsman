@@ -8,7 +8,7 @@ plugins {
 mainClassName = 'io.github.nathensample.craftsman.Craftsman'
 
 group 'io.github.nathensample'
-version '1.0.0'
+version '1.0.1'
 
 repositories {
     mavenCentral()
