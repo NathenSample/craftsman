@@ -38,4 +38,9 @@ public class MarketHistoryLookupTable {
         return Optional.ofNullable(nameToHistoryMap.get(itemName));
     }
 
+    public Optional<ItemMarketHistory> getItem(Integer itemId)
+    {
+        return Optional.ofNullable(idToHistoryMap.get(itemId));
+    }
+
 }
