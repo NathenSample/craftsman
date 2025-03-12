@@ -19,13 +19,11 @@ import java.util.List;
 @Service
 public class GoogleSheetDownloaderService {
 
+    private static final GsonFactory GSON_FACTORY = GsonFactory.getDefaultInstance();
     @Autowired
     private Configuration configuration;
-
     @Autowired
     private MarketHistoryLookupTable marketHistoryLookupTable;
-
-    private static final GsonFactory GSON_FACTORY = GsonFactory.getDefaultInstance();
 
     public GoogleSheetDownloaderService(Configuration configuration, MarketHistoryLookupTable marketHistoryLookupTable) {
         this.configuration = configuration;
@@ -45,8 +43,7 @@ public class GoogleSheetDownloaderService {
         extractAndPublishMarketHistory(values);
     }
 
-    void extractAndPublishMarketHistory(List<List<Object>> values)
-    {
+    void extractAndPublishMarketHistory(List<List<Object>> values) {
         List<ItemMarketHistory> itemMarketHistories = new ArrayList<>();
 
         for (List<Object> row : values) {
@@ -84,8 +81,7 @@ public class GoogleSheetDownloaderService {
         marketHistoryLookupTable.publishHistory(itemMarketHistories);
     }
 
-    private BigDecimal sanitizeBigDecimal(String inputStr)
-    {
+    private BigDecimal sanitizeBigDecimal(String inputStr) {
         inputStr = inputStr.replace("g", "");
         return inputStr.isEmpty()
                 ? BigDecimal.ZERO
@@ -94,15 +90,15 @@ public class GoogleSheetDownloaderService {
 
 
     private List<List<Object>> fetchDataFromGSheets(Sheets sheetsService) throws GeneralSecurityException, IOException {
-            // Public Spreadsheet ID and Range
-            String spreadsheetId = configuration.getSpreadsheetId();
-            String range = configuration.getSpreadsheetRange();
+        // Public Spreadsheet ID and Range
+        String spreadsheetId = configuration.getSpreadsheetId();
+        String range = configuration.getSpreadsheetRange();
 
-            // Fetch data
-            ValueRange response = sheetsService.spreadsheets().values()
-                    .get(spreadsheetId, range)
-                    .setKey(configuration.getGcpApiKey())
-                    .execute();
+        // Fetch data
+        ValueRange response = sheetsService.spreadsheets().values()
+                .get(spreadsheetId, range)
+                .setKey(configuration.getGcpApiKey())
+                .execute();
 
         return response.getValues();
     }

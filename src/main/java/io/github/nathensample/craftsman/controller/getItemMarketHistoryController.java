@@ -16,13 +16,11 @@ import java.util.Optional;
 
 @RestController
 public class getItemMarketHistoryController {
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     @Autowired
     private Logger logger;
-
     @Autowired
     private MarketHistoryLookupTable marketHistoryLookupTable;
-
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     @GetMapping("/market-history")
     public ResponseEntity<String> getItemHistoryByName(@RequestParam(required = false) String itemName,

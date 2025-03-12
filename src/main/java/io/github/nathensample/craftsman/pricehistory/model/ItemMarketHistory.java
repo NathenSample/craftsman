@@ -23,38 +23,6 @@ public class ItemMarketHistory {
         this.thirtyDayVolume = thirtyDayVolume;
     }
 
-    public Integer getItemId() {
-        return itemId;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public BigDecimal getOneDayAveragePrice() {
-        return oneDayAveragePrice;
-    }
-
-    public BigDecimal getOneDayHourVolume() {
-        return oneDayHourVolume;
-    }
-
-    public BigDecimal getSevenDayAveragePrice() {
-        return sevenDayAveragePrice;
-    }
-
-    public BigDecimal getSevenDayVolume() {
-        return sevenDayVolume;
-    }
-
-    public BigDecimal getThirtyAveragePrice() {
-        return thirtyAveragePrice;
-    }
-
-    public BigDecimal getThirtyDayVolume() {
-        return thirtyDayVolume;
-    }
-
     public static ItemMarketHistory compareAndSelect(ItemMarketHistory obj1, ItemMarketHistory obj2) {
         int countObj1 = countNonDefaultFields(obj1);
         int countObj2 = countNonDefaultFields(obj2);
@@ -101,5 +69,37 @@ public class ItemMarketHistory {
         }
 
         return count;
+    }
+
+    public Integer getItemId() {
+        return itemId;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public BigDecimal getOneDayAveragePrice() {
+        return oneDayAveragePrice;
+    }
+
+    public BigDecimal getOneDayHourVolume() {
+        return oneDayHourVolume;
+    }
+
+    public BigDecimal getSevenDayAveragePrice() {
+        return sevenDayAveragePrice;
+    }
+
+    public BigDecimal getSevenDayVolume() {
+        return sevenDayVolume;
+    }
+
+    public BigDecimal getThirtyAveragePrice() {
+        return thirtyAveragePrice;
+    }
+
+    public BigDecimal getThirtyDayVolume() {
+        return thirtyDayVolume;
     }
 }

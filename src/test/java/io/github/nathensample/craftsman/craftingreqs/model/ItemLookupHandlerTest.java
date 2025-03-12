@@ -1,8 +1,5 @@
 package io.github.nathensample.craftsman.craftingreqs.model;
 
-import io.github.nathensample.craftsman.craftingreqs.model.BaseItem;
-import io.github.nathensample.craftsman.craftingreqs.model.Item;
-import io.github.nathensample.craftsman.craftingreqs.model.ItemLookupTable;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;

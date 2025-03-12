@@ -17,13 +17,11 @@ import java.util.Optional;
 @Controller()
 public class getItemIngredientsController {
 
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     @Autowired
     private Logger logger;
-
     @Autowired
     private ItemLookupTable itemLookupTable;
-
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     @GetMapping("/crafting-requirements")
     //TODO: Properly handle this exception

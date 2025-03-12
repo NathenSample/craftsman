@@ -41,8 +41,7 @@ public class BaseItem extends Item {
     }
 
     @Override
-    public int hashCode()
-    {
+    public int hashCode() {
         return Objects.hash(getName().toLowerCase());
     }
 }
