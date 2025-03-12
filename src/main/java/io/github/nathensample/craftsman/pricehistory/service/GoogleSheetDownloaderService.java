@@ -52,7 +52,7 @@ public class GoogleSheetDownloaderService {
         for (List<Object> row : values) {
             // Ensure there are enough columns in the row
             if (row.size() >= 8) {
-                Integer itemId = (Integer) row.get(0);
+                Integer itemId = Integer.valueOf((String) row.get(0));
                 String itemName = (String) row.get(1);
 
                 // Handle conversion of data to BigDecimal and int
@@ -86,7 +86,8 @@ public class GoogleSheetDownloaderService {
 
     private BigDecimal sanitizeBigDecimal(String inputStr)
     {
-        return (inputStr == null || inputStr.isEmpty())
+        inputStr = inputStr.replace("g", "");
+        return inputStr.isEmpty()
                 ? BigDecimal.ZERO
                 : new BigDecimal(inputStr);
     }
