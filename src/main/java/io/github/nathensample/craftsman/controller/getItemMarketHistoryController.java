@@ -2,8 +2,6 @@ package io.github.nathensample.craftsman.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.github.nathensample.craftsman.items.Item;
-import io.github.nathensample.craftsman.items.ItemLookupTable;
 import io.github.nathensample.craftsman.pricehistory.model.ItemMarketHistory;
 import io.github.nathensample.craftsman.pricehistory.service.MarketHistoryLookupTable;
 import org.slf4j.Logger;

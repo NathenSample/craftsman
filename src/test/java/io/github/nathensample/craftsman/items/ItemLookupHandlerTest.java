@@ -1,5 +1,8 @@
 package io.github.nathensample.craftsman.items;
 
+import io.github.nathensample.craftsman.craftingreqs.items.BaseItem;
+import io.github.nathensample.craftsman.craftingreqs.items.Item;
+import io.github.nathensample.craftsman.craftingreqs.items.ItemLookupTable;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -9,9 +12,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
-import java.awt.*;
 import java.util.Map;
 import java.util.Optional;
 

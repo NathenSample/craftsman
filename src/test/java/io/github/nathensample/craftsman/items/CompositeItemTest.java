@@ -1,5 +1,7 @@
 package io.github.nathensample.craftsman.items;
 
+import io.github.nathensample.craftsman.craftingreqs.items.BaseItem;
+import io.github.nathensample.craftsman.craftingreqs.items.CompositeItem;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
