@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: live  # Set the active profile to 'live'
+
+app:
+  applicationName: Craftsman - Live  # Name used with google api
+  spreadsheetId: 1VezKZkoRFzTnB0hLpTroTRFG40NH5vEpfMjWtWCCXIc # Id of the spreadsheet to source prices from
+  spreadsheetRange: AHPrices!A2:H # The range to query from the spreadsheet
+  gcpApiKey: # Your top secret GCP api key

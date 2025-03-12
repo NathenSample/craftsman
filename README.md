@@ -13,6 +13,10 @@ Craftsman is a Java Spring Boot application designed to help players of the game
 
 - Java 11 or higher
 
+## Configure
+
+After you have cloned the repository you will have to update the `application.yml` with values appropriate to your configuration. And example file is provided.
+
 ## Installation and Running Locally
 
 1. Clone the repository:

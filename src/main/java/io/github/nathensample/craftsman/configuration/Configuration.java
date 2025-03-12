@@ -12,8 +12,6 @@ public abstract class Configuration {
 
     private String applicationName;
 
-    private String serviceAccountKeyPath;
-
     private String spreadsheetId;
 
     private String gcpApiKey;
@@ -51,13 +49,6 @@ public abstract class Configuration {
         this.applicationName = applicationName;
     }
 
-    public String getServiceAccountKeyPath() {
-        return serviceAccountKeyPath;
-    }
-
-    public void setServiceAccountKeyPath(String serviceAccountKeyPath) {
-        this.serviceAccountKeyPath = serviceAccountKeyPath;
-    }
 
     public String getSpreadsheetId() {
         return spreadsheetId;
