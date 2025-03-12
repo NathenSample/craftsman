@@ -1,4 +1,4 @@
-package io.github.nathensample.craftsman.craftingreqs.items;
+package io.github.nathensample.craftsman.craftingreqs.model;
 
 import io.github.nathensample.craftsman.util.StringUtils;
 

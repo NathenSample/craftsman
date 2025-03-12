@@ -1,6 +1,6 @@
 package io.github.nathensample.craftsman.craftingreqs.service;
 
-import io.github.nathensample.craftsman.craftingreqs.items.ItemLookupTable;
+import io.github.nathensample.craftsman.craftingreqs.model.ItemLookupTable;
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

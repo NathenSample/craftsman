@@ -1,4 +1,4 @@
-package io.github.nathensample.craftsman.craftingreqs.items;
+package io.github.nathensample.craftsman.craftingreqs.model;
 
 import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
