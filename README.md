@@ -1,7 +1,6 @@
-# Craftsman
+# Craftsman  ![](https://github.com/NathenSample/craftsman/actions/workflows/gradle.yml/badge.svg)
 
 Craftsman is a Java Spring Boot application designed to help players of the game *ArcheAge* determine the base ingredient and labor requirements for crafting items, based on user-specified configurations.
-
 ## Features
 
 - **Base Ingredient Calculation**: Determines the required base materials (e.g., ores, plants, etc.) for crafting items in *ArcheAge*.
