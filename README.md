@@ -5,8 +5,9 @@ Craftsman is a Java Spring Boot application designed to help players of the game
 
 - **Base Ingredient Calculation**: Determines the required base materials (e.g., ores, plants, etc.) for crafting items in *ArcheAge*.
 - **Labor Cost Calculation**: Calculates the labor cost for crafting based on user input and predefined configurations.
+- **Market History Information**: Pulls from Michael's price data and exposes it over REST
 - **Custom Configurations**: Allows users to define and apply custom configurations for item crafting.
-- **API Access**: Easily accessible RESTful API for fetching crafting requirements.
+- **API Access**: Easily accessible RESTful API for fetching crafting related data.
 
 ## Prerequisites
 
