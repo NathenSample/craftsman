@@ -30,7 +30,7 @@ public class MarketHistoryLookupTable {
                 ));
         nameToHistoryMap = Collections.unmodifiableMap(mutableNameMap);
 
-        logger.info("ItemStore initialized. [{}] items in map.", nameToHistoryMap.size());
+        logger.info("HistoryStore initialized. [{}] items in map.", nameToHistoryMap.size());
     }
 
     public Optional<ItemMarketHistory> getItem(String itemName)
