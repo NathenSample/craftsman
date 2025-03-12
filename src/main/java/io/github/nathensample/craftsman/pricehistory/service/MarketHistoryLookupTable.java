@@ -1,14 +1,18 @@
 package io.github.nathensample.craftsman.pricehistory.service;
 
 import io.github.nathensample.craftsman.pricehistory.model.ItemMarketHistory;
+import org.slf4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.lang.model.element.Name;
 import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
 public class MarketHistoryLookupTable {
+
+    @Autowired
+    private Logger logger;
 
     private Map<Integer, ItemMarketHistory> idToHistoryMap = Map.of();
     private Map<String, ItemMarketHistory> nameToHistoryMap = Map.of();
@@ -25,6 +29,8 @@ public class MarketHistoryLookupTable {
                         ItemMarketHistory::compareAndSelect  // Merge function to resolve duplicates
                 ));
         nameToHistoryMap = Collections.unmodifiableMap(mutableNameMap);
+
+        logger.info("ItemStore initialized. [{}] items in map.", nameToHistoryMap.size());
     }
 
     public Optional<ItemMarketHistory> getItem(String itemName)
