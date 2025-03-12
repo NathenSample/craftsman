@@ -6,6 +6,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,19 +15,14 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 
 @ExtendWith(MockitoExtension.class)
-@SpringBootTest
 public class ItemRequirementTest {
 
-    @Autowired
-    private Logger logger;
+    private Logger logger = LoggerFactory.getLogger(ItemRequirementTest.class);
 
-    @Mock
-    private Logger mockLogger;
-
-    @InjectMocks
-    private ItemLookupTable itemStore;
+    private ItemLookupTable itemStore = new ItemLookupTable(mock(Logger.class));
 
     @Mock
     private ItemLookupTable mockItemStore;
