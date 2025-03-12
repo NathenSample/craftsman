@@ -1,4 +1,5 @@
 googleApiSecret.json
+application-dev.yaml
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
