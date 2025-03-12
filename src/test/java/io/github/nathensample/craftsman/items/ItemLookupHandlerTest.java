@@ -11,15 +11,16 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.awt.*;
 import java.util.Map;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.mock;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @ExtendWith(MockitoExtension.class)
-@SpringBootTest
 public class ItemLookupHandlerTest {
     @Autowired
     private Logger logger;
@@ -32,6 +33,7 @@ public class ItemLookupHandlerTest {
 
     @BeforeAll
     public void setup() {
+        itemStore = new ItemLookupTable(mock(Logger.class));
         itemStore.init();
     }
 
