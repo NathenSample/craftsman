@@ -25,7 +25,7 @@ A Google GCP API key can be found by following [these](https://support.google.co
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/craftsman.git
+   git clone https://github.com/NathenSample/craftsman.git
     ```
 
 2. Navigate into the project directory:
