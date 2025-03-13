@@ -6,7 +6,7 @@ import io.github.nathensample.craftsman.pricehistory.model.PriceCalculationRespo
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
@@ -27,6 +27,7 @@ class PriceCalculationServiceTest {
     @BeforeEach
     void setup()
     {
+        MockitoAnnotations.openMocks(this);
         marketHistoryLookupTableMock = mock(MarketHistoryLookupTable.class);
         priceCalculationService = new PriceCalculationService(marketHistoryLookupTableMock);
     }
@@ -37,9 +38,9 @@ class PriceCalculationServiceTest {
         Item mockItem1 = mock(Item.class);
         when(mockItem1.getName()).thenReturn("Test1");
         Item mockItem2 = mock(Item.class);
-        when(mockItem1.getName()).thenReturn("Test2");
+        when(mockItem2.getName()).thenReturn("Test2");
         Item mockItem3 = mock(Item.class);
-        when(mockItem1.getName()).thenReturn("Test3");
+        when(mockItem3.getName()).thenReturn("Test3");
 
         ItemMarketHistory itemMarketHistory1 = new ItemMarketHistory(1, "Test1", BigDecimal.ONE, BigDecimal.ONE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.ZERO, BigDecimal.ZERO);
         ItemMarketHistory itemMarketHistory2 = new ItemMarketHistory(1, "Test2", BigDecimal.ONE, BigDecimal.ONE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.ZERO, BigDecimal.ZERO);
@@ -60,9 +61,9 @@ class PriceCalculationServiceTest {
         Item mockItem1 = mock(Item.class);
         when(mockItem1.getName()).thenReturn("Test1");
         Item mockItem2 = mock(Item.class);
-        when(mockItem1.getName()).thenReturn("Test2");
+        when(mockItem2.getName()).thenReturn("Test2");
         Item mockItem3 = mock(Item.class);
-        when(mockItem1.getName()).thenReturn("Test3");
+        when(mockItem3.getName()).thenReturn("Test3");
 
         ItemMarketHistory itemMarketHistory1 = new ItemMarketHistory(1, "Test1", BigDecimal.ONE, BigDecimal.ONE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.ZERO, BigDecimal.ZERO);
         ItemMarketHistory itemMarketHistory2 = new ItemMarketHistory(1, "Test2", BigDecimal.ONE, BigDecimal.ONE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.ZERO, BigDecimal.ZERO);
@@ -73,7 +74,7 @@ class PriceCalculationServiceTest {
 
         PriceCalculationResponse priceCalculationResponse = priceCalculationService.getPriceCalculation(Map.of(mockItem1, 1, mockItem2, 2, mockItem3, 3), PriceCalculationPeriod.ONE_DAY);
 
-        assertEquals(6, priceCalculationResponse.price().intValue());
+        assertEquals(3, priceCalculationResponse.price().intValue());
         assertEquals(1, priceCalculationResponse.unpricedItemNames().size());
         assertEquals("Test3", priceCalculationResponse.unpricedItemNames().get(0));
     }

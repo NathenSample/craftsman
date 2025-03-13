@@ -1,5 +1,7 @@
 package io.github.nathensample.craftsman.pricehistory.model;
 
+import io.github.nathensample.craftsman.pricehistory.service.PriceCalculationPeriod;
+
 import java.math.BigDecimal;
 
 public class ItemMarketHistory {
@@ -101,5 +103,13 @@ public class ItemMarketHistory {
 
     public BigDecimal getThirtyDayVolume() {
         return thirtyDayVolume;
+    }
+
+    public BigDecimal getAveragePrice(PriceCalculationPeriod period) {
+        return switch (period) {
+            case ONE_DAY -> getOneDayAveragePrice();
+            case SEVEN_DAY -> getSevenDayAveragePrice();
+            case THIRTY_DAY -> getThirtyAveragePrice();
+        };
     }
 }
