@@ -38,8 +38,6 @@ public class PriceCalculationService {
                 if (priceInPeriod.equals(BigDecimal.ZERO))
                 {
                     unpricedItemNames.add(itemName);
-                    //TODO: At some point, but in reality never, fix the logic so the break isn't needed
-                    break;
                 }
                 total = total.add(priceInPeriod.multiply(BigDecimal.valueOf(quantity)));
             } else {
