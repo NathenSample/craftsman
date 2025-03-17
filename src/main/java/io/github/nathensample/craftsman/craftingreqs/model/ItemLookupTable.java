@@ -72,6 +72,9 @@ public class ItemLookupTable {
         BaseItem veiledFlame = new BaseItem("Veiled Flame");
         BaseItem medicinalPowder = new BaseItem("Medicinal Powder");
         BaseItem lavender = new BaseItem("Lavender");
+        BaseItem farmFreighterUpgradeTicket = new BaseItem("Farm Freighter Upgrade Ticket");
+        BaseItem wagonUpgradeTicket = new BaseItem("Wagon Upgrade Ticket");
+        BaseItem farmWagonDesign = new BaseItem("Farm Wagon Design");
         //End BaseItem declaration
 
         //Begin CompositeItem declaration
@@ -129,6 +132,10 @@ public class ItemLookupTable {
         CompositeItem scrollSeaskimmerSpeedboat = new CompositeItem("Scroll: Seaskimmer Speedboat", Map.of(scrollSeawhipSpeedboat, 1, speedboatUpgradeTicket, 1), Proficiency.CARPENTRY, 0);
         //End CompositeItem declaration
 
+        CompositeItem cartBucket = new CompositeItem("Cart Bucket", Map.of(copperIngot, 2, leather, 2), Proficiency.UNCATEGORIZED, 0);
+        CompositeItem scrollFarmWagon = new CompositeItem("Scroll: Farm Wagon", Map.of(farmWagonDesign, 1, strongWheel, 4, solidShaft, 1, highPowerEngine, 1, cartBucket, 1), Proficiency.MACHINING, 25);
+        CompositeItem scrollFarmHauler = new CompositeItem("Scroll: Farm Hauler", Map.of(scrollFarmWagon, 1, wagonUpgradeTicket, 1), Proficiency.UNCATEGORIZED, 0);
+        CompositeItem scrollFarmFreighter = new CompositeItem("Scroll: Farm Freighter", Map.of(scrollFarmHauler, 1, farmFreighterUpgradeTicket, 1), Proficiency.UNCATEGORIZED, 0);
         return Map.ofEntries(
                 // BaseItems
                 Map.entry("Cloth Mana Wisp", clothManaWisp),
@@ -176,6 +183,12 @@ public class ItemLookupTable {
                 Map.entry("Ayanad Weaponsmithing Scroll", ayanadWeaponsmithingScroll),
                 Map.entry("Speedboat Upgrade Ticket", speedboatUpgradeTicket),
                 Map.entry("Seawhip Speedboat Design", seawhipSpeedboatDesign),
+                Map.entry("Veiled Flame", veiledFlame),
+                Map.entry("Medicinal Powder", medicinalPowder),
+                Map.entry("Lavender", lavender),
+                Map.entry("Farm Freighter Upgrade Ticket", farmFreighterUpgradeTicket),
+                Map.entry("Wagon Upgrade Ticket", wagonUpgradeTicket),
+                Map.entry("Farm Wagon Design", farmWagonDesign),
 
                 // CompositeItems
                 Map.entry("Small Root Pigment", smallRootPigment),
@@ -224,7 +237,11 @@ public class ItemLookupTable {
                 Map.entry("Sealed Delphinad Bow", sealedDelphinadBow),
                 Map.entry("Sealed Ayanad Bow", sealedAyanadBow),
                 Map.entry("Scroll: Seawhip Speedboat", scrollSeawhipSpeedboat),
-                Map.entry("Scroll: Seaskimmer Speedboat", scrollSeaskimmerSpeedboat)
+                Map.entry("Scroll: Seaskimmer Speedboat", scrollSeaskimmerSpeedboat),
+                Map.entry("Cart Bucket", cartBucket),
+                Map.entry("Scroll: Farm Wagon", scrollFarmWagon),
+                Map.entry("Scroll: Farm Hauler", scrollFarmHauler),
+                Map.entry("Scroll: Farm Freighter", scrollFarmFreighter)
         );
     }
 
