@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.nathensample.craftsman.craftingreqs.model.Item;
 import io.github.nathensample.craftsman.craftingreqs.model.ItemLookupTable;
+import io.github.nathensample.craftsman.pricehistory.model.PriceCalculationWrapper;
 import io.github.nathensample.craftsman.pricehistory.service.MarketHistoryLookupTable;
 import io.github.nathensample.craftsman.pricehistory.service.PriceCalculationPeriod;
 import io.github.nathensample.craftsman.pricehistory.service.PriceCalculationService;
@@ -35,7 +36,7 @@ public class getIngredientsPriceController {
         Optional<Item> itemOpt = itemLookupTable.getItem(itemName);
         if (itemOpt.isPresent()) {
             Map<Item, Integer> itemToQuantity = itemOpt.get().computeRequirements();
-            String json = OBJECT_MAPPER.writeValueAsString(priceCalculationService.getPriceCalculation(itemToQuantity, PriceCalculationPeriod.SEVEN_DAY));
+            String json = OBJECT_MAPPER.writeValueAsString(new PriceCalculationWrapper(itemName, priceCalculationService.getPriceCalculation(itemToQuantity, PriceCalculationPeriod.SEVEN_DAY)));
             return ResponseEntity.ok(json);
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(String.format("Item Name [%s] not found in recipe lookup.", itemName));

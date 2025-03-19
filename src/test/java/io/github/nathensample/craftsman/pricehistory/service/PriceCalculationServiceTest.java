@@ -2,7 +2,7 @@ package io.github.nathensample.craftsman.pricehistory.service;
 
 import io.github.nathensample.craftsman.craftingreqs.model.Item;
 import io.github.nathensample.craftsman.pricehistory.model.ItemMarketHistory;
-import io.github.nathensample.craftsman.pricehistory.model.PriceCalculationResponse;
+import io.github.nathensample.craftsman.pricehistory.model.PriceCalculation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -50,9 +50,9 @@ class PriceCalculationServiceTest {
         when(marketHistoryLookupTableMock.getItem("Test2")).thenReturn(Optional.of(itemMarketHistory2));
         when(marketHistoryLookupTableMock.getItem("Test3")).thenReturn(Optional.of(itemMarketHistory3));
 
-        PriceCalculationResponse priceCalculationResponse = priceCalculationService.getPriceCalculation(Map.of(mockItem1, 1, mockItem2, 2, mockItem3, 3), PriceCalculationPeriod.ONE_DAY);
+        PriceCalculation priceCalculation = priceCalculationService.getPriceCalculation(Map.of(mockItem1, 1, mockItem2, 2, mockItem3, 3), PriceCalculationPeriod.ONE_DAY);
 
-        assertEquals(6, priceCalculationResponse.price().intValue());
+        assertEquals(6, priceCalculation.price().intValue());
     }
 
     @Test
@@ -72,10 +72,10 @@ class PriceCalculationServiceTest {
         when(marketHistoryLookupTableMock.getItem("Test2")).thenReturn(Optional.of(itemMarketHistory2));
         when(marketHistoryLookupTableMock.getItem("Test3")).thenReturn(Optional.empty());
 
-        PriceCalculationResponse priceCalculationResponse = priceCalculationService.getPriceCalculation(Map.of(mockItem1, 1, mockItem2, 2, mockItem3, 3), PriceCalculationPeriod.ONE_DAY);
+        PriceCalculation priceCalculation = priceCalculationService.getPriceCalculation(Map.of(mockItem1, 1, mockItem2, 2, mockItem3, 3), PriceCalculationPeriod.ONE_DAY);
 
-        assertEquals(3, priceCalculationResponse.price().intValue());
-        assertEquals(1, priceCalculationResponse.unpricedItemNames().size());
-        assertEquals("Test3", priceCalculationResponse.unpricedItemNames().get(0));
+        assertEquals(3, priceCalculation.price().intValue());
+        assertEquals(1, priceCalculation.unpricedItemNames().size());
+        assertEquals("Test3", priceCalculation.unpricedItemNames().get(0));
     }
 }

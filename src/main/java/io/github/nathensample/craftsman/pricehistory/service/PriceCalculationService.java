@@ -2,7 +2,7 @@ package io.github.nathensample.craftsman.pricehistory.service;
 
 import io.github.nathensample.craftsman.craftingreqs.model.Item;
 import io.github.nathensample.craftsman.pricehistory.model.ItemMarketHistory;
-import io.github.nathensample.craftsman.pricehistory.model.PriceCalculationResponse;
+import io.github.nathensample.craftsman.pricehistory.model.PriceCalculation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class PriceCalculationService {
         this.marketHistoryLookupTable = marketHistoryLookupTable;
     }
 
-    public PriceCalculationResponse getPriceCalculation(Map<Item, Integer> itemQuantityMap, PriceCalculationPeriod period){
+    public PriceCalculation getPriceCalculation(Map<Item, Integer> itemQuantityMap, PriceCalculationPeriod period){
         List<String> unpricedItemNames = new ArrayList<>();
         BigDecimal total = BigDecimal.ZERO;
 
@@ -45,6 +45,6 @@ public class PriceCalculationService {
             }
         };
 
-        return new PriceCalculationResponse(total, unpricedItemNames);
+        return new PriceCalculation(total, unpricedItemNames);
     }
 }
