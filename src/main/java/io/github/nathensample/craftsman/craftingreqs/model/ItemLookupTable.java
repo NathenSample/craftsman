@@ -1,6 +1,7 @@
 package io.github.nathensample.craftsman.craftingreqs.model;
 
 import jakarta.annotation.PostConstruct;
+import org.checkerframework.checker.units.qual.C;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -75,6 +76,12 @@ public class ItemLookupTable {
         BaseItem farmFreighterUpgradeTicket = new BaseItem("Farm Freighter Upgrade Ticket");
         BaseItem wagonUpgradeTicket = new BaseItem("Wagon Upgrade Ticket");
         BaseItem farmWagonDesign = new BaseItem("Farm Wagon Design");
+        BaseItem royalJelly = new BaseItem("Royal Jelly");
+        BaseItem honey = new BaseItem("Honey");
+        BaseItem glowingPrism = new BaseItem("Glowing Prism");
+        BaseItem ruby = new BaseItem("Ruby");
+        BaseItem flamingPinion = new BaseItem("Flaming Pinion");
+        BaseItem lunarite = new BaseItem("Lunarite");
         //End BaseItem declaration
 
         //Begin CompositeItem declaration
@@ -136,6 +143,13 @@ public class ItemLookupTable {
         CompositeItem scrollFarmWagon = new CompositeItem("Scroll: Farm Wagon", Map.of(farmWagonDesign, 1, strongWheel, 4, solidShaft, 1, highPowerEngine, 1, cartBucket, 1), Proficiency.MACHINING, 25);
         CompositeItem scrollFarmHauler = new CompositeItem("Scroll: Farm Hauler", Map.of(scrollFarmWagon, 1, wagonUpgradeTicket, 1), Proficiency.UNCATEGORIZED, 0);
         CompositeItem scrollFarmFreighter = new CompositeItem("Scroll: Farm Freighter", Map.of(scrollFarmHauler, 1, farmFreighterUpgradeTicket, 1), Proficiency.UNCATEGORIZED, 0);
+        CompositeItem waxNugget = new CompositeItem("Wax Nugget", Map.of(royalJelly, 2, honey, 5), Proficiency.ALCHEMY, 10);
+        CompositeItem armoredFrame = new CompositeItem("Armored Frame", Map.of(copperIngot, 300, lumber, 200, waxNugget, 2),Proficiency.CARPENTRY, 20);
+        CompositeItem fineLunarite = new CompositeItem("Fine Lunarite", Map.of(lunarite, 5), Proficiency.ALCHEMY, 1);
+        CompositeItem superiorLunarite = new CompositeItem("Superior Lunarite", Map.of(fineLunarite, 3), Proficiency.ALCHEMY, 1);
+        CompositeItem primeLunarite = new CompositeItem("Prime Lunarite", Map.of(superiorLunarite, 3), Proficiency.ALCHEMY, 1);
+        CompositeItem infernoEngine = new CompositeItem("Inferno Engine", Map.of(glowingPrism, 100, sunridgeIngot, 1, ruby, 20, superiorLunarite, 20, flamingPinion, 100), Proficiency.MACHINING, 20);
+        CompositeItem animaExtractionContraption = new CompositeItem("Anima Extraction Contraption", Map.of(armoredFrame, 1, mechanicalSpring, 4, infernoEngine, 1), Proficiency.CARPENTRY, 20);
         return Map.ofEntries(
                 // BaseItems
                 Map.entry("cloth mana wisp", clothManaWisp),
@@ -189,6 +203,10 @@ public class ItemLookupTable {
                 Map.entry("farm freighter upgrade ticket", farmFreighterUpgradeTicket),
                 Map.entry("wagon upgrade ticket", wagonUpgradeTicket),
                 Map.entry("farm wagon design", farmWagonDesign),
+                Map.entry("honey", honey),
+                Map.entry("royal jelly", royalJelly),
+                Map.entry("hushed star", hushedStar),
+                Map.entry("lunarite", lunarite),
 
                 // CompositeItems
                 Map.entry("small root pigment", smallRootPigment),
@@ -240,7 +258,15 @@ public class ItemLookupTable {
                 Map.entry("scroll: seaskimmer speedboat", scrollSeaskimmerSpeedboat),
                 Map.entry("cart bucket", cartBucket),
                 Map.entry("scroll: farm wagon", scrollFarmWagon),
-                Map.entry("scroll: farm hauler", scrollFarmHauler)
+                Map.entry("scroll: farm hauler", scrollFarmHauler),
+                Map.entry("scroll: farm freighter", scrollFarmFreighter),
+                Map.entry("wax nugget", waxNugget),
+                Map.entry("armored frame", armoredFrame),
+                Map.entry("fine lunarite", fineLunarite),
+                Map.entry("superior lunarite", superiorLunarite),
+                Map.entry("prime lunarite", primeLunarite),
+                Map.entry("inferno engine", infernoEngine),
+                Map.entry("anima extraction contraption", animaExtractionContraption)
           );
     }
 

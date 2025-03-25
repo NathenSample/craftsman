@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.github.nathensample.craftsman.craftingreqs.model.Item;
 import io.github.nathensample.craftsman.craftingreqs.model.ItemLookupTable;
 import io.github.nathensample.craftsman.pricehistory.model.PriceCalculationWrapper;
-import io.github.nathensample.craftsman.pricehistory.service.MarketHistoryLookupTable;
 import io.github.nathensample.craftsman.pricehistory.service.PriceCalculationPeriod;
 import io.github.nathensample.craftsman.pricehistory.service.PriceCalculationService;
 import org.slf4j.Logger;
