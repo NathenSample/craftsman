@@ -19,7 +19,6 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-
 public class getIngredientsPriceController {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     @Autowired
