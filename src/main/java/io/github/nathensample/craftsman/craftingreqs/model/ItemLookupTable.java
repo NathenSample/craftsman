@@ -82,6 +82,11 @@ public class ItemLookupTable {
         BaseItem ruby = new BaseItem("Ruby");
         BaseItem flamingPinion = new BaseItem("Flaming Pinion");
         BaseItem lunarite = new BaseItem("Lunarite");
+        BaseItem dragonEssenceStabilizer = new BaseItem("Dragon Essence Stabilizer");
+        BaseItem seabreezeTradePackStorageDesign = new BaseItem("Seabreeze Trade Pack Storage Design");
+        BaseItem mistralTradePackStorageDesign = new BaseItem("Mistral Trade Pack Storage Design");
+        BaseItem seastormTradePackStorageDesign = new BaseItem("Seastorm Trade Pack Storage Design");
+        BaseItem typhoonTradePackStorageDesign = new BaseItem("Typhoon Trade Pack Storage Design");
         //End BaseItem declaration
 
         //Begin CompositeItem declaration
@@ -150,6 +155,14 @@ public class ItemLookupTable {
         CompositeItem primeLunarite = new CompositeItem("Prime Lunarite", Map.of(superiorLunarite, 3), Proficiency.ALCHEMY, 1);
         CompositeItem infernoEngine = new CompositeItem("Inferno Engine", Map.of(glowingPrism, 100, sunridgeIngot, 1, ruby, 20, superiorLunarite, 20, flamingPinion, 100), Proficiency.MACHINING, 20);
         CompositeItem animaExtractionContraption = new CompositeItem("Anima Extraction Contraption", Map.of(armoredFrame, 1, mechanicalSpring, 4, infernoEngine, 1), Proficiency.CARPENTRY, 20);
+
+        CompositeItem zephyrTradePackStorage = new CompositeItem("Zephyr Trade Pack Storage", Map.of(lumber, 18, ironIngot, 8, starshardIngot, 3, charcoalStabilizer, 12), Proficiency.MACHINING, 25);
+        CompositeItem seabreezeTradePackStorage = new CompositeItem("Seabreeze Trade Pack Storage", Map.of(zephyrTradePackStorage, 1, lumber, 16, ironIngot, 32, starshardIngot, 1, charcoalStabilizer, 2, seabreezeTradePackStorageDesign, 1), Proficiency.MACHINING, 50);
+        CompositeItem mistralTradePackStorage = new CompositeItem("Mistral Trade Pack Storage", Map.of(seabreezeTradePackStorage, 1, fineLumber, 2, starshardIngot, 2, charcoalStabilizer, 4, mistralTradePackStorageDesign, 1), Proficiency.MACHINING, 75);
+        CompositeItem seastormTradePackStorage = new CompositeItem("Seastorm Trade Pack Storage", Map.of(mistralTradePackStorage, 1, fineLumber, 4, starshardIngot, 3, charcoalStabilizer, 6, seastormTradePackStorageDesign, 1), Proficiency.MACHINING, 100);
+        CompositeItem typhoonTradePackStorage = new CompositeItem("Typhoon Trade Pack Storage", Map.of(seastormTradePackStorage, 1, nuriForestLumber, 1, starshardIngot, 4, charcoalStabilizer, 8, dragonEssenceStabilizer, 1, typhoonTradePackStorageDesign, 1), Proficiency.MACHINING, 125);
+
+
         return Map.ofEntries(
                 // BaseItems
                 Map.entry("cloth mana wisp", clothManaWisp),
@@ -207,6 +220,11 @@ public class ItemLookupTable {
                 Map.entry("royal jelly", royalJelly),
                 Map.entry("hushed star", hushedStar),
                 Map.entry("lunarite", lunarite),
+                Map.entry("dragon essence stabilizer", dragonEssenceStabilizer),
+                Map.entry("seabreeze trade pack storage design", seabreezeTradePackStorageDesign),
+                Map.entry("mistral trade pack storage design", mistralTradePackStorageDesign),
+                Map.entry("seastorm trade pack storage design", seastormTradePackStorageDesign),
+                Map.entry("typhoon trade pack storage design", typhoonTradePackStorageDesign),
 
                 // CompositeItems
                 Map.entry("small root pigment", smallRootPigment),
@@ -266,7 +284,12 @@ public class ItemLookupTable {
                 Map.entry("superior lunarite", superiorLunarite),
                 Map.entry("prime lunarite", primeLunarite),
                 Map.entry("inferno engine", infernoEngine),
-                Map.entry("anima extraction contraption", animaExtractionContraption)
+                Map.entry("anima extraction contraption", animaExtractionContraption),
+                Map.entry("zephyr trade pack storage", zephyrTradePackStorage),
+                Map.entry("seabreeze trade pack storage", seabreezeTradePackStorage),
+                Map.entry("mistral trade pack storage", mistralTradePackStorage),
+                Map.entry("seastorm trade pack storage", seastormTradePackStorage),
+                Map.entry("typhoon trade pack storage", typhoonTradePackStorage)
           );
     }
 
