@@ -87,6 +87,11 @@ public class ItemLookupTable {
         BaseItem mistralTradePackStorageDesign = new BaseItem("Mistral Trade Pack Storage Design");
         BaseItem seastormTradePackStorageDesign = new BaseItem("Seastorm Trade Pack Storage Design");
         BaseItem typhoonTradePackStorageDesign = new BaseItem("Typhoon Trade Pack Storage Design");
+
+        BaseItem caernordSeabreezeRudderDesign = new BaseItem("Caernord Seabreeze Rudder Design");
+        BaseItem caernordMistralRudderDesign = new BaseItem("Caernord Mistral Rudder Design");
+        BaseItem caernordSeastormRudderDesign = new BaseItem("Caernord Seastorm Rudder Design");
+        BaseItem caernordTyphoonRudderDesign = new BaseItem("Caernord Typhoon Rudder Design");
         //End BaseItem declaration
 
         //Begin CompositeItem declaration
@@ -162,6 +167,11 @@ public class ItemLookupTable {
         CompositeItem seastormTradePackStorage = new CompositeItem("Seastorm Trade Pack Storage", Map.of(mistralTradePackStorage, 1, fineLumber, 4, starshardIngot, 3, charcoalStabilizer, 6, seastormTradePackStorageDesign, 1), Proficiency.MACHINING, 100);
         CompositeItem typhoonTradePackStorage = new CompositeItem("Typhoon Trade Pack Storage", Map.of(seastormTradePackStorage, 1, nuriForestLumber, 1, starshardIngot, 4, charcoalStabilizer, 8, dragonEssenceStabilizer, 1, typhoonTradePackStorageDesign, 1), Proficiency.MACHINING, 125);
 
+        CompositeItem caernordZephyrRudder = new CompositeItem("Caernord Zephyr Rudder", Map.of(lumber, 8, ironIngot, 5, starshardIngot, 3, charcoalStabilizer, 12), Proficiency.MACHINING, 25);
+        CompositeItem caernordSeabreezeRudder = new CompositeItem("Caernord Seabreeze Rudder", Map.of(caernordZephyrRudder, 1, lumber, 16, ironIngot, 10, starshardIngot, 3, charcoalStabilizer, 12, caernordSeabreezeRudderDesign, 1), Proficiency.MACHINING, 50);
+        CompositeItem caernordMistralRudder = new CompositeItem("Caernord Mistral Rudder", Map.of(caernordSeabreezeRudder, 1, fineLumber, 15, sturdyIngot, 10, starshardIngot, 5, charcoalStabilizer, 27, caernordMistralRudderDesign, 1), Proficiency.MACHINING, 75);
+        CompositeItem caernordSeastormRudder = new CompositeItem("Caernord Seastorm Rudder", Map.of(caernordMistralRudder, 1, nuriForestLumber, 2, sunridgeIngot, 2, starshardIngot, 7, charcoalStabilizer, 45, caernordSeastormRudderDesign, 1), Proficiency.MACHINING, 100);
+        CompositeItem caernordTypoonRudder = new CompositeItem("Caernord Typhoon Rudder", Map.of(caernordSeastormRudder, 1, nuriForestLumber, 6, sunridgeIngot, 5, starshardIngot, 9, charcoalStabilizer, 54, dragonEssenceStabilizer, 24, caernordTyphoonRudderDesign, 1), Proficiency.MACHINING, 125);
 
         return Map.ofEntries(
                 // BaseItems
@@ -225,6 +235,10 @@ public class ItemLookupTable {
                 Map.entry("mistral trade pack storage design", mistralTradePackStorageDesign),
                 Map.entry("seastorm trade pack storage design", seastormTradePackStorageDesign),
                 Map.entry("typhoon trade pack storage design", typhoonTradePackStorageDesign),
+                Map.entry("caernord seabreeze rudder design", caernordSeabreezeRudderDesign),
+                Map.entry("caernord mistral rudder design", caernordMistralRudderDesign),
+                Map.entry("caernord seastorm rudder design", caernordSeastormRudderDesign),
+                Map.entry("caernord typoon rudder design", caernordTyphoonRudderDesign),
 
                 // CompositeItems
                 Map.entry("small root pigment", smallRootPigment),
@@ -289,7 +303,12 @@ public class ItemLookupTable {
                 Map.entry("seabreeze trade pack storage", seabreezeTradePackStorage),
                 Map.entry("mistral trade pack storage", mistralTradePackStorage),
                 Map.entry("seastorm trade pack storage", seastormTradePackStorage),
-                Map.entry("typhoon trade pack storage", typhoonTradePackStorage)
+                Map.entry("typhoon trade pack storage", typhoonTradePackStorage),
+                Map.entry("caernord zephyr rudder", caernordZephyrRudder),
+                Map.entry("caernord seabreeze rudder", caernordSeabreezeRudder),
+                Map.entry("caernord mistral rudder", caernordMistralRudder),
+                Map.entry("caernord seastorm rudder", caernordSeabreezeRudder),
+                Map.entry("caernord typhoon rudder", caernordTypoonRudder)
           );
     }
 
