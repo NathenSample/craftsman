@@ -92,6 +92,11 @@ public class ItemLookupTable {
         BaseItem caernordMistralRudderDesign = new BaseItem("Caernord Mistral Rudder Design");
         BaseItem caernordSeastormRudderDesign = new BaseItem("Caernord Seastorm Rudder Design");
         BaseItem caernordTyphoonRudderDesign = new BaseItem("Caernord Typhoon Rudder Design");
+
+        BaseItem seabreezeShroudlightDesign = new BaseItem("Seabreeze Shroudlight Design");
+        BaseItem mistralShroudlightDesign = new BaseItem("Mistral Shroudlight Design");
+        BaseItem seastormShroudlightDesign = new BaseItem("Seastorm Shroudlight Design");
+        BaseItem typhoonShroudlightDesign = new BaseItem("Typhoon Shroudlight Design");
         //End BaseItem declaration
 
         //Begin CompositeItem declaration
@@ -173,6 +178,14 @@ public class ItemLookupTable {
         CompositeItem caernordSeastormRudder = new CompositeItem("Caernord Seastorm Rudder", Map.of(caernordMistralRudder, 1, nuriForestLumber, 2, sunridgeIngot, 2, starshardIngot, 7, charcoalStabilizer, 45, caernordSeastormRudderDesign, 1), Proficiency.MACHINING, 100);
         CompositeItem caernordTypoonRudder = new CompositeItem("Caernord Typhoon Rudder", Map.of(caernordSeastormRudder, 1, nuriForestLumber, 6, sunridgeIngot, 5, starshardIngot, 9, charcoalStabilizer, 54, dragonEssenceStabilizer, 24, caernordTyphoonRudderDesign, 1), Proficiency.MACHINING, 125);
 
+
+        CompositeItem zephyrLamp = new CompositeItem("Zephyr Lamp", Map.of(lumber, 5, ironIngot, 8, starshardIngot, 5, charcoalStabilizer, 12), Proficiency.MACHINING, 25);
+        CompositeItem seabreezeShroudlight = new CompositeItem("Seabreeze Shroudlight", Map.of(nuriForestLumber, 2, sunridgeIngot, 2, starshardIngot, 12, charcoalStabilizer, 24, seabreezeShroudlightDesign, 1), Proficiency.MACHINING, 50);
+        CompositeItem mistralShroudlight = new CompositeItem("Mistral Shroudlight", Map.of(seabreezeShroudlight, 1, nuriForestLumber, 8, sunridgeIngot, 8, starshardIngot, 24, charcoalStabilizer, 84, mistralShroudlightDesign, 1), Proficiency.MACHINING, 75);
+        CompositeItem seastormShroudlight = new CompositeItem("Seastorm Shroudlight", Map.of(mistralShroudlight, 1, nuriForestLumber, 18, sunridgeIngot, 24, starshardIngot, 48, charcoalStabilizer, 252, seastormShroudlightDesign, 1), Proficiency.MACHINING, 100);
+        CompositeItem typhoonShroudlight = new CompositeItem("Typhoon Shroudlight", Map.of(seastormShroudlight, 1, nuriForestLumber, 36, sunridgeIngot, 48, starshardIngot, 92, charcoalStabilizer, 324, dragonEssenceStabilizer, 72, typhoonShroudlightDesign, 1), Proficiency.MACHINING, 125);
+
+
         return Map.ofEntries(
                 // BaseItems
                 Map.entry("cloth mana wisp", clothManaWisp),
@@ -239,6 +252,10 @@ public class ItemLookupTable {
                 Map.entry("caernord mistral rudder design", caernordMistralRudderDesign),
                 Map.entry("caernord seastorm rudder design", caernordSeastormRudderDesign),
                 Map.entry("caernord typoon rudder design", caernordTyphoonRudderDesign),
+                Map.entry("seabreeze shroudlight design", seabreezeShroudlightDesign),
+                Map.entry("mistral shroudlight design", mistralShroudlightDesign),
+                Map.entry("seastorm shroudlight design", seastormShroudlightDesign),
+                Map.entry("typhoon shroudlight design", typhoonShroudlightDesign),
 
                 // CompositeItems
                 Map.entry("small root pigment", smallRootPigment),
@@ -307,8 +324,13 @@ public class ItemLookupTable {
                 Map.entry("caernord zephyr rudder", caernordZephyrRudder),
                 Map.entry("caernord seabreeze rudder", caernordSeabreezeRudder),
                 Map.entry("caernord mistral rudder", caernordMistralRudder),
-                Map.entry("caernord seastorm rudder", caernordSeabreezeRudder),
-                Map.entry("caernord typhoon rudder", caernordTypoonRudder)
+                Map.entry("caernord seastorm rudder", caernordSeastormRudder),
+                Map.entry("caernord typhoon rudder", caernordTypoonRudder),
+                Map.entry("zephyr lamp", zephyrLamp),
+                Map.entry("seabreeze shroudlight", seabreezeShroudlight),
+                Map.entry("mistral shroudlight", mistralShroudlight),
+                Map.entry("seastorm shroudlight", seastormShroudlight),
+                Map.entry("typhoon shroudlight", typhoonShroudlight)
           );
     }
 

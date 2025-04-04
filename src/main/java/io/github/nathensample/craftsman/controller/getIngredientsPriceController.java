@@ -2,6 +2,7 @@ package io.github.nathensample.craftsman.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import io.github.nathensample.craftsman.craftingreqs.model.Item;
 import io.github.nathensample.craftsman.craftingreqs.model.ItemLookupTable;
 import io.github.nathensample.craftsman.pricehistory.model.PriceCalculationWrapper;
@@ -20,7 +21,7 @@ import java.util.Optional;
 
 @RestController
 public class getIngredientsPriceController {
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
     @Autowired
     private Logger logger;
     @Autowired
