@@ -97,6 +97,17 @@ public class ItemLookupTable {
         BaseItem mistralShroudlightDesign = new BaseItem("Mistral Shroudlight Design");
         BaseItem seastormShroudlightDesign = new BaseItem("Seastorm Shroudlight Design");
         BaseItem typhoonShroudlightDesign = new BaseItem("Typhoon Shroudlight Design");
+
+
+
+        BaseItem cursedArmorScrap = new BaseItem("Cursed Armor Scrap");
+        BaseItem acidGobbet = new BaseItem("Acid Gobbet");
+        BaseItem bookOfAuroria = new BaseItem("Book of Auroria");
+        BaseItem quinoa = new BaseItem("Quinoa");
+        BaseItem ginseng = new BaseItem("Ginseng");
+        BaseItem sparklingShellDust = new BaseItem("Sparkling Shell Dust");
+        BaseItem coconut = new BaseItem("Cocunut");
+
         //End BaseItem declaration
 
         //Begin CompositeItem declaration
@@ -185,9 +196,18 @@ public class ItemLookupTable {
         CompositeItem seastormShroudlight = new CompositeItem("Seastorm Shroudlight", Map.of(mistralShroudlight, 1, nuriForestLumber, 18, sunridgeIngot, 24, starshardIngot, 48, charcoalStabilizer, 252, seastormShroudlightDesign, 1), Proficiency.MACHINING, 100);
         CompositeItem typhoonShroudlight = new CompositeItem("Typhoon Shroudlight", Map.of(seastormShroudlight, 1, nuriForestLumber, 36, sunridgeIngot, 48, starshardIngot, 92, charcoalStabilizer, 324, dragonEssenceStabilizer, 72, typhoonShroudlightDesign, 1), Proficiency.MACHINING, 125);
 
-
+        CompositeItem ipnyshLunastoneBlessing = new CompositeItem("Ipnysh Lunastone Blessing", Map.of(cursedArmorScrap, 100, acidGobbet, 100, dragonEssenceStabilizer, 20),Proficiency.UNCATEGORIZED, 500);
+        CompositeItem deeplyColoredOil = new CompositeItem("Deeply Colored Oil", Map.of(dragonEssenceStabilizer, 3, quinoa, 50, ginseng, 50, sparklingShellDust, 10, coconut, 10), Proficiency.ALCHEMY, 60);
+        CompositeItem erenorGaleLunafrost = new CompositeItem("Erenor Gale Lunafrost", Map.of(ipnyshLunastoneBlessing, 1, bookOfAuroria, 15, primeLunarite, 12, deeplyColoredOil, 5, diamond, 9), Proficiency.ALCHEMY, 300);
         return Map.ofEntries(
                 // BaseItems
+                Map.entry("quinoa", quinoa),
+                Map.entry("ginseng", ginseng),
+                Map.entry("sparkling shell dust", sparklingShellDust),
+                Map.entry("coconut", coconut),
+                Map.entry("book of auroria", bookOfAuroria),
+                Map.entry("cursed armor scrap", cursedArmorScrap),
+                Map.entry("acid gobbet", acidGobbet),
                 Map.entry("cloth mana wisp", clothManaWisp),
                 Map.entry("charcoal stabilizer", charcoalStabilizer),
                 Map.entry("narcissus", narcissus),
@@ -258,6 +278,9 @@ public class ItemLookupTable {
                 Map.entry("typhoon shroudlight design", typhoonShroudlightDesign),
 
                 // CompositeItems
+                Map.entry("deeply colored oil", deeplyColoredOil),
+                Map.entry("erenor gale lunafrost", erenorGaleLunafrost),
+                Map.entry("ipnysh lunastone blessing", ipnyshLunastoneBlessing),
                 Map.entry("small root pigment", smallRootPigment),
                 Map.entry("fabric", fabric),
                 Map.entry("beautifully colored fabric", beautifullyColoredFabric),
