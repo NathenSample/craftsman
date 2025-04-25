@@ -81,6 +81,10 @@ public class ItemMarketHistory {
         return itemName;
     }
 
+    public String getItemNameToLower() {
+        return itemName.toLowerCase();
+    }
+
     public BigDecimal getOneDayAveragePrice() {
         return oneDayAveragePrice;
     }

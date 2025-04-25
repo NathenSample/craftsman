@@ -30,7 +30,7 @@ public class PriceCalculationService {
             int quantity = entry.getValue();
             String itemName = entry.getKey().getName();
 
-            Optional<ItemMarketHistory> itemMarketHistoryOpt = marketHistoryLookupTable.getItem(itemName);
+            Optional<ItemMarketHistory> itemMarketHistoryOpt = marketHistoryLookupTable.getItem(itemName.toLowerCase());
             if (itemMarketHistoryOpt.isPresent())
             {
                 ItemMarketHistory itemMarketHistory = itemMarketHistoryOpt.get();

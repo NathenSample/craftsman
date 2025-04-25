@@ -104,9 +104,9 @@ public class ItemLookupTable {
         BaseItem acidGobbet = new BaseItem("Acid Gobbet");
         BaseItem bookOfAuroria = new BaseItem("Book of Auroria");
         BaseItem quinoa = new BaseItem("Quinoa");
-        BaseItem ginseng = new BaseItem("Ginseng");
+        BaseItem cultivatedGinseng = new BaseItem("Cultivated Ginseng");
         BaseItem sparklingShellDust = new BaseItem("Sparkling Shell Dust");
-        BaseItem coconut = new BaseItem("Cocunut");
+        BaseItem coconut = new BaseItem("Coconut");
 
         //End BaseItem declaration
 
@@ -197,12 +197,12 @@ public class ItemLookupTable {
         CompositeItem typhoonShroudlight = new CompositeItem("Typhoon Shroudlight", Map.of(seastormShroudlight, 1, nuriForestLumber, 36, sunridgeIngot, 48, starshardIngot, 92, charcoalStabilizer, 324, dragonEssenceStabilizer, 72, typhoonShroudlightDesign, 1), Proficiency.MACHINING, 125);
 
         CompositeItem ipnyshLunastoneBlessing = new CompositeItem("Ipnysh Lunastone Blessing", Map.of(cursedArmorScrap, 100, acidGobbet, 100, dragonEssenceStabilizer, 20),Proficiency.UNCATEGORIZED, 500);
-        CompositeItem deeplyColoredOil = new CompositeItem("Deeply Colored Oil", Map.of(dragonEssenceStabilizer, 3, quinoa, 50, ginseng, 50, sparklingShellDust, 10, coconut, 10), Proficiency.ALCHEMY, 60);
+        CompositeItem deeplyColoredOil = new CompositeItem("Deeply Colored Oil", Map.of(dragonEssenceStabilizer, 3, quinoa, 50, cultivatedGinseng, 50, sparklingShellDust, 10, coconut, 10), Proficiency.ALCHEMY, 60);
         CompositeItem erenorGaleLunafrost = new CompositeItem("Erenor Gale Lunafrost", Map.of(ipnyshLunastoneBlessing, 1, bookOfAuroria, 15, primeLunarite, 12, deeplyColoredOil, 5, diamond, 9), Proficiency.ALCHEMY, 300);
         return Map.ofEntries(
                 // BaseItems
                 Map.entry("quinoa", quinoa),
-                Map.entry("ginseng", ginseng),
+                Map.entry("cultivated ginseng", cultivatedGinseng),
                 Map.entry("sparkling shell dust", sparklingShellDust),
                 Map.entry("coconut", coconut),
                 Map.entry("book of auroria", bookOfAuroria),

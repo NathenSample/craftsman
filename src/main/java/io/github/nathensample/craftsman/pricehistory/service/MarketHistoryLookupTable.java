@@ -27,7 +27,7 @@ public class MarketHistoryLookupTable {
 
         Map<String, ItemMarketHistory> mutableNameMap = itemMarketHistories.stream()
                 .collect(Collectors.toMap(
-                        ItemMarketHistory::getItemName,  // Key is itemName
+                        ItemMarketHistory::getItemNameToLower,  // Key is itemName
                         item -> item,                    // Value is the item itself
                         ItemMarketHistory::compareAndSelect  // Merge function to resolve duplicates
                 ));
