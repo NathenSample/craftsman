@@ -46,9 +46,9 @@ class PriceCalculationServiceTest {
         ItemMarketHistory itemMarketHistory2 = new ItemMarketHistory(1, "Test2", BigDecimal.ONE, BigDecimal.ONE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.ZERO, BigDecimal.ZERO);
         ItemMarketHistory itemMarketHistory3 = new ItemMarketHistory(1, "Test3", BigDecimal.ONE, BigDecimal.ONE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.ZERO, BigDecimal.ZERO);
 
-        when(marketHistoryLookupTableMock.getItem("Test1")).thenReturn(Optional.of(itemMarketHistory1));
-        when(marketHistoryLookupTableMock.getItem("Test2")).thenReturn(Optional.of(itemMarketHistory2));
-        when(marketHistoryLookupTableMock.getItem("Test3")).thenReturn(Optional.of(itemMarketHistory3));
+        when(marketHistoryLookupTableMock.getItem("test1")).thenReturn(Optional.of(itemMarketHistory1));
+        when(marketHistoryLookupTableMock.getItem("test2")).thenReturn(Optional.of(itemMarketHistory2));
+        when(marketHistoryLookupTableMock.getItem("test3")).thenReturn(Optional.of(itemMarketHistory3));
 
         PriceCalculation priceCalculation = priceCalculationService.getPriceCalculation(Map.of(mockItem1, 1, mockItem2, 2, mockItem3, 3), PriceCalculationPeriod.ONE_DAY);
 
@@ -68,9 +68,9 @@ class PriceCalculationServiceTest {
         ItemMarketHistory itemMarketHistory1 = new ItemMarketHistory(1, "Test1", BigDecimal.ONE, BigDecimal.ONE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.ZERO, BigDecimal.ZERO);
         ItemMarketHistory itemMarketHistory2 = new ItemMarketHistory(1, "Test2", BigDecimal.ONE, BigDecimal.ONE, BigDecimal.TEN, BigDecimal.TEN, BigDecimal.ZERO, BigDecimal.ZERO);
 
-        when(marketHistoryLookupTableMock.getItem("Test1")).thenReturn(Optional.of(itemMarketHistory1));
-        when(marketHistoryLookupTableMock.getItem("Test2")).thenReturn(Optional.of(itemMarketHistory2));
-        when(marketHistoryLookupTableMock.getItem("Test3")).thenReturn(Optional.empty());
+        when(marketHistoryLookupTableMock.getItem("test1")).thenReturn(Optional.of(itemMarketHistory1));
+        when(marketHistoryLookupTableMock.getItem("test2")).thenReturn(Optional.of(itemMarketHistory2));
+        when(marketHistoryLookupTableMock.getItem("test3")).thenReturn(Optional.empty());
 
         PriceCalculation priceCalculation = priceCalculationService.getPriceCalculation(Map.of(mockItem1, 1, mockItem2, 2, mockItem3, 3), PriceCalculationPeriod.ONE_DAY);
 
