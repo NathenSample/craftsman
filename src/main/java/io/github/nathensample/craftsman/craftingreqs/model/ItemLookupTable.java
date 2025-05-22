@@ -108,6 +108,16 @@ public class ItemLookupTable {
         BaseItem sparklingShellDust = new BaseItem("Sparkling Shell Dust");
         BaseItem coconut = new BaseItem("Coconut");
 
+        BaseItem oneHanderMetalManaWisp = new BaseItem("One-Hander Metal Mana Wisp");
+        BaseItem shadowOrb = new BaseItem("Shadow Orb");
+        BaseItem wrathsmiteArmorShard = new BaseItem("Wrathsmite Armor Shard");
+        BaseItem ironArmorFragment = new BaseItem("Iron Armor Fragment");
+
+        BaseItem anthalonsCrimsonHallow = new BaseItem("Anthalon's Crimson Hallow");
+        BaseItem hanuresHorn = new BaseItem("Hanure's Horn");
+        BaseItem kaylinsQuill = new BaseItem("Kaylin's Quill");
+        BaseItem anyaPebble = new BaseItem("Anya Pebble");
+
         //End BaseItem declaration
 
         //Begin CompositeItem declaration
@@ -199,6 +209,16 @@ public class ItemLookupTable {
         CompositeItem ipnyshLunastoneBlessing = new CompositeItem("Ipnysh Lunastone Blessing", Map.of(cursedArmorScrap, 100, acidGobbet, 100, dragonEssenceStabilizer, 20),Proficiency.UNCATEGORIZED, 500);
         CompositeItem deeplyColoredOil = new CompositeItem("Deeply Colored Oil", Map.of(dragonEssenceStabilizer, 3, quinoa, 50, cultivatedGinseng, 50, sparklingShellDust, 10, coconut, 10), Proficiency.ALCHEMY, 60);
         CompositeItem erenorGaleLunafrost = new CompositeItem("Erenor Gale Lunafrost", Map.of(ipnyshLunastoneBlessing, 1, bookOfAuroria, 15, primeLunarite, 12, deeplyColoredOil, 5, diamond, 9), Proficiency.ALCHEMY, 300);
+
+        CompositeItem brimstoneSunlightSeal = new CompositeItem("Brimstone Sunlight Seal", Map.of(sunridgeIngot, 2, nuriForestLumber, 2, sunlightArcheumEssence, 25), Proficiency.ALCHEMY, 100);
+        //TODO: This is wrong it uses a seal which is transmute
+
+        CompositeItem anyaIngot = new CompositeItem("Anya Ingot", Map.of(anyaPebble, 3), Proficiency.METALWORK, 50);
+        CompositeItem blazingSunridgeIngot = new CompositeItem("Blazing Sunridge Ingot", Map.of(sunridgeIngot, 10, anyaIngot, 9, lordsCoin, 18, flamingLog, 6), Proficiency.METALWORK, 100);
+
+        CompositeItem cloakedBrimstoneShortspearCraft = new CompositeItem("Cloaked Brimstone Shortspear(craft)", Map.of(brimstoneSunlightSeal, 1, oneHanderMetalManaWisp, 315, shadowOrb, 121, wrathsmiteArmorShard, 30, ironArmorFragment, 12, sunridgeIngot, 12), Proficiency.UNCATEGORIZED, 1250);
+        CompositeItem cloakedBrimstoneShortspearTransmute = new CompositeItem("Cloaked Brimstone Shortspear(transmute)", Map.of(brimstoneSunlightSeal, 1, oneHanderMetalManaWisp, 100, anthalonsCrimsonHallow, 1, hanuresHorn, 1, kaylinsQuill, 1, blazingSunridgeIngot, 6), Proficiency.UNCATEGORIZED, 10);
+
         return Map.ofEntries(
                 // BaseItems
                 Map.entry("quinoa", quinoa),
@@ -276,6 +296,14 @@ public class ItemLookupTable {
                 Map.entry("mistral shroudlight design", mistralShroudlightDesign),
                 Map.entry("seastorm shroudlight design", seastormShroudlightDesign),
                 Map.entry("typhoon shroudlight design", typhoonShroudlightDesign),
+                Map.entry("one-hander metal mana wisp", oneHanderMetalManaWisp),
+                Map.entry("shadow orb", shadowOrb),
+                Map.entry("wrathsmite armor shard", wrathsmiteArmorShard),
+                Map.entry("iron armor fragment", ironArmorFragment),
+                Map.entry("anthalons crimson hallow", anthalonsCrimsonHallow),
+                Map.entry("hanure's horn", hanuresHorn),
+                Map.entry("kaylin's quill", kaylinsQuill),
+                Map.entry("anya pebble", anyaPebble),
 
                 // CompositeItems
                 Map.entry("deeply colored oil", deeplyColoredOil),
@@ -353,7 +381,11 @@ public class ItemLookupTable {
                 Map.entry("seabreeze shroudlight", seabreezeShroudlight),
                 Map.entry("mistral shroudlight", mistralShroudlight),
                 Map.entry("seastorm shroudlight", seastormShroudlight),
-                Map.entry("typhoon shroudlight", typhoonShroudlight)
+                Map.entry("typhoon shroudlight", typhoonShroudlight),
+                Map.entry("brimstone sunlight seal", brimstoneSunlightSeal),
+                Map.entry("cloaked brimstone shortspear(craft)", cloakedBrimstoneShortspearCraft),
+                Map.entry("blazing sunridge ingot", blazingSunridgeIngot),
+                Map.entry("cloaked brimstone shortspear(transmute)", cloakedBrimstoneShortspearTransmute)
           );
     }
 
